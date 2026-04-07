@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Familias Seguras - Protege lo que mas amas</title>
+  <meta name="description" content="Asesoria en seguros de vida, salud, hogar y vehiculos. Cotiza gratis hoy."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div id="popup-overlay" class="popup-overlay">
+    <div class="popup-box">
+      <button class="popup-close" id="popup-close">&times;</button>
+      <img src="https://royerhernandez.github.io/FamiliasSegurasRepo/imagenes/Logos/pp.jfif" alt="Logo" class="popup-logo"/>
+      <h2>Descarga Gratis</h2>
+      <p>La guia <strong>"5 seguros que toda familia colombiana necesita"</strong></p>
+      <form class="popup-form" onsubmit="handlePopupSubmit(event)">
+        <input type="text" placeholder="Tu nombre" required/>
+        <input type="email" placeholder="Tu correo" required/>
+        <button type="submit" class="btn-primary">QUIERO MI GUIA</button>
+      </form>
+      <small>Sin spam. Solo informacion de valor.</small>
+    </div>
+  </div>
+  <header class="header" id="header">
+    <div class="header-inner container">
+      <a href="#inicio" class="logo-link">
+        <img src="https://royerhernandez.github.io/FamiliasSegurasRepo/imagenes/Logos/pp.jfif" alt="Familias Seguras" class="logo-img"/>
+      </a>
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li><a href="#seguros" class="nav-link">Nuestros Seguros</a></li>
+          <li class="nav-dropdown">
+            <a href="#" class="nav-link">Tipos de Seguro <i class="fa fa-chevron-down fa-xs"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#vida">Seguro de Vida</a></li>
+              <li><a href="#salud">Seguro de Salud</a></li>
+              <li><a href="#hogar">Seguro de Hogar</a></li>
+              <li><a href="#vehiculos">Seguro de Vehiculos</a></li>
+              <li><a href="#empresarial">Seguro Empresarial</a></li>
+            </ul>
+          </li>
+          <li><a href="#proceso" class="nav-link">Como funciona?</a></li>
+          <li><a href="#equipo" class="nav-link">Nuestro Equipo</a></li>
+          <li><a href="#blog" class="nav-link">Blog</a></li>
+          <li><a href="#contacto" class="nav-link nav-cta">Cotizar Gratis</a></li>
+        </ul>
+      </nav>
+      <div class="header-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/573000000000"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1 class="hero-title">Protege lo que mas amas<br/><span class="hero-highlight">con el seguro correcto</span></h1>
+      <p class="hero-subtitle">Te acompano a elegir el seguro ideal para tu vida, salud, hogar y patrimonio familiar.</p>
+      <div class="hero-buttons">
+        <a href="#contacto" class="btn-primary">COTIZA GRATIS HOY</a>
+        <a href="#seguros" class="btn-outline">VER TIPOS DE SEGUROS</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=700&q=80" alt="Familia feliz"/>
+    </div>
+  </section>
+  <section class="value-section">
+    <div class="container text-center">
+      <h2 class="section-title">Mas que un seguro, te ofrezco<br/><span>tranquilidad y proteccion real</span></h2>
+      <p class="section-subtitle">En <strong>Familias Seguras</strong> creemos que proteger a tu familia no se trata de gastar mas, sino de tomar la decision correcta. Con mas de <strong>10 anos de experiencia</strong> hemos ayudado a cientos de familias colombianas.</p>
+      <a href="#contacto" class="btn-primary">AGENDA TU ASESORIA GRATUITA</a>
+    </div>
+  </section>
+  <section class="reasons-section" id="razones">
+    <div class="container">
+      <h2 class="section-title text-center">4 razones para no esperar mas:</h2>
+      <div class="reasons-grid">
+        <div class="reason-card"><div class="reason-icon"><i class="fas fa-shield-alt"></i></div><h3>Proteccion desde hoy</h3><p>Un accidente puede ocurrir en cualquier momento. Asegurar hoy garantiza que tu familia estara cubierta.</p></div>
+        <div class="reason-card"><div class="reason-icon"><i class="fas fa-coins"></i></div><h3>Ahorro a largo plazo</h3><p>El costo de un seguro es menor al gasto de una emergencia sin cobertura. Prevenir es mas economico.</p></div>
+        <div class="reason-card"><div class="reason-icon"><i class="fas fa-heart"></i></div><h3>Tranquilidad familiar</h3><p>Saber que tus seres queridos estan protegidos te da paz mental para enfocarte en lo que importa.</p></div>
+        <div class="reason-card"><div class="reason-icon"><i class="fas fa-chart-line"></i></div><h3>Seguro que crece contigo</h3><p>Disenamos un plan de proteccion que evoluciona con tu familia en cada etapa de la vida.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="insurance-section" id="seguros">
+    <div class="container">
+      <h2 class="section-title text-center">Seguros que te acompanan en cada etapa</h2>
+      <p class="section-subtitle text-center">Elige el plan que mejor se adapta a ti y tu familia</p>
+      <div class="insurance-grid">
+        <div class="insurance-card" id="vida"><div class="insurance-icon"><i class="fas fa-user-shield"></i></div><h3>Seguro de Vida</h3><p>Garantiza el bienestar economico de tu familia. Capital, renta o mixto: tu decides.</p><a href="#contacto" class="btn-card">COTIZA AHORA</a></div>
+        <div class="insurance-card" id="salud"><div class="insurance-icon"><i class="fas fa-heartbeat"></i></div><h3>Seguro de Salud</h3><p>Accede a la mejor atencion medica. Cubre hospitalizacion, cirugias, medicamentos y mas.</p><a href="#contacto" class="btn-card">COTIZA AHORA</a></div>
+        <div class="insurance-card" id="hogar"><div class="insurance-icon"><i class="fas fa-home"></i></div><h3>Seguro de Hogar</h3><p>Protege tu vivienda frente a incendios, robos, inundaciones y danos estructurales.</p><a href="#contacto" class="btn-card">COTIZA AHORA</a></div>
+        <div class="insurance-card" id="vehiculos"><div class="insurance-icon"><i class="fas fa-car"></i></div><h3>Seguro de Vehiculos</h3><p>Cobertura completa: todo riesgo, responsabilidad civil y asistencia en via.</p><a href="#contacto" class="btn-card">COTIZA AHORA</a></div>
+        <div class="insurance-card" id="empresarial"><div class="insurance-icon"><i class="fas fa-building"></i></div><h3>Seguro Empresarial</h3><p>Protege tu negocio, empleados y activos con soluciones para empresas de cualquier tamano.</p><a href="#contacto" class="btn-card">COTIZA AHORA</a></div>
+        <div class="insurance-card featured"><div class="insurance-icon"><i class="fas fa-star"></i></div><h3>Plan Familiar 360</h3><p>Nuestro plan mas completo: vida, salud y hogar en un solo producto para familias colombianas.</p><a href="#contacto" class="btn-card btn-featured">VER PLAN COMPLETO</a></div>
+      </div>
+    </div>
+  </section>
+  <section class="method-section">
+    <div class="container">
+      <div class="method-content">
+        <div class="method-text">
+          <h2 class="section-title">El Plan Familias Seguras 360:</h2>
+          <h3 class="method-subtitle">protege, cubre y acompana a tu familia</h3>
+          <p>Trabajamos juntos para construir una <strong>estrategia de proteccion integral</strong>, paso a paso:</p>
+          <ul class="method-list">
+            <li><i class="fas fa-check-circle"></i> Diagnostico de riesgos personalizado</li>
+            <li><i class="fas fa-check-circle"></i> Seleccion del seguro ideal segun tu perfil</li>
+            <li><i class="fas fa-check-circle"></i> Plan de proteccion familiar y patrimonial</li>
+            <li><i class="fas fa-check-circle"></i> Acompanamiento en caso de siniestros</li>
+            <li><i class="fas fa-check-circle"></i> Revision anual de coberturas</li>
+          </ul>
+          <p class="method-result"><strong>El resultado:</strong> una estrategia clara, documentada y adaptada a tu familia.</p>
+          <a href="#contacto" class="btn-primary">QUIERO MI PLAN DE PROTECCION</a>
+          <p class="method-note">Cupos limitados / Aplica ahora para la preseleccion</p>
+        </div>
+        <div class="method-image">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Familia protegida"/>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="process-section" id="proceso">
+    <div class="container">
+      <h2 class="section-title text-center">Como funciona la asesoria gratuita?</h2>
+      <div class="process-steps">
+        <div class="process-step"><div class="step-number">01</div><div class="step-icon"><i class="fas fa-file-alt"></i></div><h3>Diagnostico inicial</h3><p>Completaras un formulario donde nos cuentas tu situacion, necesidades y presupuesto.</p></div>
+        <div class="process-arrow"><i class="fas fa-arrow-right"></i></div>
+        <div class="process-step"><div class="step-number">02</div><div class="step-icon"><i class="fas fa-video"></i></div><h3>Reunion 1:1</h3><p>Agendamos una sesion por Zoom o Google Meet con tu asesor especializado.</p></div>
+        <div class="process-arrow"><i class="fas fa-arrow-right"></i></div>
+        <div class="process-step"><div class="step-number">03</div><div class="step-icon"><i class="fas fa-clipboard-check"></i></div><h3>Tu plan personalizado</h3><p>Recibiras una propuesta clara con las mejores opciones de seguros adaptadas a tu familia.</p></div>
+      </div>
+      <div class="text-center" style="margin-top:2.5rem"><a href="#contacto" class="btn-primary">QUIERO APLICAR A LA ASESORIA</a></div>
+    </div>
+  </section>
+  <section class="profiles-section">
+    <div class="container">
+      <h2 class="section-title text-center">Como podemos ayudarte?</h2>
+      <div class="profiles-grid">
+        <div class="profile-card"><div class="profile-icon"><i class="fas fa-seedling"></i></div><h3>Estas empezando a proteger tu familia</h3><p>Quieres asegurarte pero no sabes por donde empezar. Te orientamos paso a paso:</p><ul><li>Que seguro necesitas segun tus ingresos</li><li>Como elegir sin pagar de mas</li><li>Que decision tomar <strong>hoy</strong></li></ul></div>
+        <div class="profile-card"><div class="profile-icon"><i class="fas fa-layer-group"></i></div><h3>Quieres una estrategia completa</h3><p>Ya tienes seguro pero quieres optimizar coberturas y reducir costos:</p><ul><li>Optimizacion de primas y coberturas</li><li>Proteccion patrimonial familiar</li><li>Planificacion de seguros a largo plazo</li><li>Estrategia de herencia y legado</li></ul></div>
+      </div>
+      <div class="profiles-quote"><p>"Sea cual sea tu perfil, te acompanamos a dar el siguiente paso con seguros inteligentes, cercanos y disenados para ti."</p></div>
+      <div class="text-center"><a href="#contacto" class="btn-primary">QUIERO APLICAR A LA ASESORIA</a></div>
+    </div>
+  </section>
+  <section class="team-section" id="equipo">
+    <div class="container">
+      <h2 class="section-title text-center">Nuestro Equipo</h2>
+      <p class="section-subtitle text-center">Profesionales comprometidos con la proteccion de tu familia</p>
+      <div class="team-grid">
+        <div class="team-card"><div class="team-photo"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&q=80" alt="Asesor"/></div><h3>Royer Hernandez</h3><p class="team-role">Director & Asesor Principal</p><p class="team-bio">Especialista en seguros de vida y patrimoniales con mas de 10 anos de experiencia.</p><div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+        <div class="team-card"><div class="team-photo"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&q=80" alt="Asesora"/></div><h3>Ana Maria Garcia</h3><p class="team-role">Asesora en Seguros de Salud</p><p class="team-bio">Experta en seguros de salud y planes colectivos empresariales. Certificada por las principales aseguradoras.</p><div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+        <div class="team-card"><div class="team-photo"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" alt="Asesor"/></div><h3>Carlos Mendoza</h3><p class="team-role">Asesor en Seguros Patrimoniales</p><p class="team-bio">Especializado en seguros de hogar, vehiculos y empresariales. 8 anos de experiencia.</p><div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title text-center">La mejor prueba de nuestro trabajo, son nuestros clientes</h2>
+      <div class="testimonials-carousel" id="carousel">
+        <div class="testimonials-track" id="carousel-track">
+          <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Me limitaba a tener un seguro basico porque creia que era muy costoso. Gracias a Familias Seguras descubri que podia tener cobertura completa a un precio accesible."</p><div class="testimonial-author"><strong>Claudia Martinez</strong><span>Docente, Medellin</span></div></div>
+          <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Royer explica muy bien, responde todas las preguntas y siempre esta disponible. Desde que contrate el seguro me siento mucho mas tranquilo."</p><div class="testimonial-author"><strong>Juan Pablo Torres</strong><span>Ingeniero, Bogota</span></div></div>
+          <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"El proceso fue sencillo y sin presiones. El equipo es muy profesional y transparente. 100% recomendado."</p><div class="testimonial-author"><strong>Sandra Ospina</strong><span>Empresaria, Cali</span></div></div>
+          <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Nunca pense que asegurar mi hogar y vehiculo podia ser tan facil. Me ayudaron a entender exactamente que necesitaba."</p><div class="testimonial-author"><strong>Diego Ramirez</strong><span>Medico, Barranquilla</span></div></div>
+          <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"El seguro empresarial que me recomendaron ha sido fundamental para mi negocio. La atencion fue personalizada."</p><div class="testimonial-author"><strong>Marcela Rios</strong><span>Gerente PYME, Bucaramanga</span></div></div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-dots" id="carousel-dots"></div>
+        <button class="carousel-btn" id="next-btn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+  <section class="blog-section" id="blog">
+    <div class="container">
+      <h2 class="section-title text-center">Actualizate</h2>
+      <p class="section-subtitle text-center">Aprende a proteger tu familia con informacion clara y practica</p>
+      <div class="blog-grid">
+        <article class="blog-card"><div class="blog-image"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80" alt="Blog"/><span class="blog-tag">Seguros de Vida</span></div><div class="blog-content"><h3>Que seguro de vida necesitas si eres independiente?</h3><p>Si trabajas por tu cuenta, nadie cubre tus ingresos si quedas incapacitado. Descubre como protegerte...</p><a href="#" class="blog-link">Leer mas <i class="fas fa-arrow-right"></i></a></div></article>
+        <article class="blog-card"><div class="blog-image"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80" alt="Blog"/><span class="blog-tag">Salud</span></div><div class="blog-content"><h3>Los 5 errores mas comunes al comprar un seguro de salud</h3><p>Muchas familias pagan mas de lo necesario por no revisar estos puntos clave...</p><a href="#" class="blog-link">Leer mas <i class="fas fa-arrow-right"></i></a></div></article>
+        <article class="blog-card"><div class="blog-image"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80" alt="Blog"/><span class="blog-tag">Hogar</span></div><div class="blog-content"><h3>Vale la pena asegurar tu vivienda en arriendo?</h3><p>El seguro de contenidos es mas accesible de lo que crees y cubre lo que mas valoras...</p><a href="#" class="blog-link">Leer mas <i class="fas fa-arrow-right"></i></a></div></article>
+      </div>
+      <div class="text-center" style="margin-top:2rem"><a href="#" class="btn-outline">CONOCE MAS ARTICULOS</a></div>
+    </div>
+  </section>
+  <section class="contact-section" id="contacto">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h2 class="section-title">Listo para proteger a tu familia?</h2>
+          <p>Agenda tu asesoria gratuita. Sin compromisos. Solo una conversacion honesta sobre lo que necesitas.</p>
+          <ul class="contact-features">
+            <li><i class="fas fa-check-circle"></i> Asesoria 100% gratuita</li>
+            <li><i class="fas fa-check-circle"></i> Sin presion de venta</li>
+            <li><i class="fas fa-check-circle"></i> Respuesta en menos de 24 horas</li>
+            <li><i class="fas fa-check-circle"></i> Atencion personalizada 1 a 1</li>
+          </ul>
+          <div class="contact-social">
+            <a href="#" class="social-pill"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#" class="social-pill"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://wa.me/573000000000" class="social-pill whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="#" class="social-pill"><i class="fab fa-youtube"></i> YouTube</a>
+          </div>
+        </div>
+        <div class="contact-form-box">
+          <h3>Solicita tu cotizacion gratis</h3>
+          <form class="contact-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-group"><label>Nombre completo *</label><input type="text" placeholder="Tu nombre" required/></div>
+            <div class="form-group"><label>Correo electronico *</label><input type="email" placeholder="tu@correo.com" required/></div>
+            <div class="form-group"><label>WhatsApp / Telefono *</label><input type="tel" placeholder="+57 300 000 0000" required/></div>
+            <div class="form-group"><label>Tipo de seguro *</label>
+              <select required><option value="">Selecciona...</option><option>Seguro de Vida</option><option>Seguro de Salud</option><option>Seguro de Hogar</option><option>Seguro de Vehiculos</option><option>Seguro Empresarial</option><option>Plan Familiar 360</option><option>No se, necesito orientacion</option></select>
+            </div>
+            <div class="form-group"><label>Cuentanos mas (opcional)</label><textarea rows="3" placeholder="Que necesitas proteger?"></textarea></div>
+            <button type="submit" class="btn-primary btn-full">SOLICITAR COTIZACION GRATIS</button>
+            <p class="form-disclaimer">Politica de privacidad. No compartimos tus datos.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="https://royerhernandez.github.io/FamiliasSegurasRepo/imagenes/Logos/pp.jfif" alt="Logo" class="footer-logo"/>
+            <p>Protegemos lo que mas importa: tu familia, tu salud y tu patrimonio.</p>
+            <div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="https://wa.me/573000000000"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-tiktok"></i></a></div>
+          </div>
+          <div class="footer-links"><h4>Seguros</h4><ul><li><a href="#vida">Seguro de Vida</a></li><li><a href="#salud">Seguro de Salud</a></li><li><a href="#hogar">Seguro de Hogar</a></li><li><a href="#vehiculos">Seguro de Vehiculos</a></li><li><a href="#empresarial">Seguro Empresarial</a></li><li><a href="#seguros">Plan Familiar 360</a></li></ul></div>
+          <div class="footer-links"><h4>Empresa</h4><ul><li><a href="#equipo">Nuestro Equipo</a></li><li><a href="#proceso">Como funciona?</a></li><li><a href="#blog">Blog</a></li><li><a href="#">Trabaja con nosotros</a></li><li><a href="#">Material Gratuito</a></li></ul></div>
+          <div class="footer-newsletter"><h4>Newsletter</h4><p>Recibe consejos para proteger mejor a tu familia</p><form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)"><input type="email" placeholder="Tu correo" required/><button type="submit"><i class="fas fa-paper-plane"></i></button></form></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container"><p>2025 Familias Seguras. Todos los derechos reservados.</p><p><a href="#">Politica de privacidad</a> | <a href="#">Terminos y condiciones</a></p></div></div>
+  </footer>
+  <a href="https://wa.me/573000000000?text=Hola,%20deseo%20conocer%20mas%20sobre%20seguros." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i><span class="whatsapp-tooltip">Necesitas ayuda?</span></a>
+  <button class="scroll-top" id="scroll-top"><i class="fas fa-chevron-up"></i></button>
+  <script src="js/script.js"></script>
+</body>
+</html>
