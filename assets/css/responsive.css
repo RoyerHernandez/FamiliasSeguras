@@ -100,10 +100,14 @@
   .team-showcase {
     grid-template-columns: 1fr;
     text-align: center;
+    max-width: 100%; /* No supera el ancho del contenedor */
+    height: auto;    /* Mantiene la proporción */
   }
 
   .team-showcase .team-social {
     justify-content: center;
+    max-width: 100%; /* No supera el ancho del contenedor */
+    height: auto;    /* Mantiene la proporción */
   }
 
 
