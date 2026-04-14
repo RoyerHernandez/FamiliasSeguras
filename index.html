@@ -7,15 +7,21 @@
   <meta name="description" content="Asesoria en seguros de vida, salud, hogar y vehiculos. Cotiza gratis hoy."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="css/style.css"/>
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="assets/css/variables.css"/>
+  <link rel="stylesheet" href="assets/css/base.css"/>
+  <link rel="stylesheet" href="assets/css/components.css"/>
+  <link rel="stylesheet" href="assets/css/layout.css"/>
+  <link rel="stylesheet" href="assets/css/sections.css"/>
+  <link rel="stylesheet" href="assets/css/responsive.css"/>
 </head>
 <body>
   <div id="popup-overlay" class="popup-overlay">
     <div class="popup-box">
       <button class="popup-close" id="popup-close">&times;</button>
-      <img src="https://royerhernandez.github.io/FamiliasSegurasRepo/imagenes/Logos/pp.jfif" alt="Logo" class="popup-logo"/>
+      <img src="assets/img/logos/logo fam2 (1) (1).png" alt="Logo" class="popup-logo"/>
       <h2>Descarga Gratis</h2>
       <p>La guia <strong>"5 seguros que toda familia colombiana necesita"</strong></p>
       <form class="popup-form" onsubmit="handlePopupSubmit(event)">
@@ -29,7 +35,7 @@
   <header class="header" id="header">
     <div class="header-inner container">
       <a href="#inicio" class="logo-link">
-        <img src="https://royerhernandez.github.io/FamiliasSegurasRepo/imagenes/Logos/pp.jfif" alt="Familias Seguras" class="logo-img"/>
+        <img src="assets/img/logos/logo fam2 (1) (1).png" alt="Familias Seguras" class="logo-img"/>
       </a>
       <nav class="nav" id="nav">
         <ul class="nav-list">
@@ -41,7 +47,11 @@
               <li><a href="#vida">Seguro de Vida</a></li>
               <li><a href="#salud">Seguro de Salud</a></li>
               <li><a href="#hogar">Seguro de Hogar</a></li>
-              <li><a href="#vehiculos">Seguro de Vehiculos</a></li>
+              <li><a href="#vehiculos">Seguro de Autos</a></li>
+              <li><a href="#viajes">Seguro de Viajes</a></li>
+              <li><a href="#arrendamiento">Arrendamiento Digital</a></li>
+              <li><a href="#arrendamiento-trad">Arrendamiento Tradicional</a></li>
+              <li><a href="#credito-vehiculo">Credito para Vehiculo</a></li>
               <li><a href="#empresarial">Seguro Empresarial</a></li>
             </ul>
           </li>
@@ -100,8 +110,12 @@
         <div class="insurance-card" id="vida"><div class="insurance-icon"><i class="fas fa-user-shield"></i></div><h3>Seguro de Vida</h3><p>Garantiza el bienestar economico de tu familia. Capital, renta o mixto: tu decides.</p><a href="#contacto" class="btn-card">COTIZA AHORA</a></div>
         <div class="insurance-card" id="salud"><div class="insurance-icon"><i class="fas fa-heartbeat"></i></div><h3>Seguro de Salud</h3><p>Accede a la mejor atencion medica. Cubre hospitalizacion, cirugias, medicamentos y mas.</p><a href="#contacto" class="btn-card">COTIZA AHORA</a></div>
         <div class="insurance-card" id="hogar"><div class="insurance-icon"><i class="fas fa-home"></i></div><h3>Seguro de Hogar</h3><p>Protege tu vivienda frente a incendios, robos, inundaciones y danos estructurales.</p><a href="#contacto" class="btn-card">COTIZA AHORA</a></div>
-        <div class="insurance-card" id="vehiculos"><div class="insurance-icon"><i class="fas fa-car"></i></div><h3>Seguro de Vehiculos</h3><p>Cobertura completa: todo riesgo, responsabilidad civil y asistencia en via.</p><a href="#contacto" class="btn-card">COTIZA AHORA</a></div>
-        <div class="insurance-card" id="empresarial"><div class="insurance-icon"><i class="fas fa-building"></i></div><h3>Seguro Empresarial</h3><p>Protege tu negocio, empleados y activos con soluciones para empresas de cualquier tamano.</p><a href="#contacto" class="btn-card">COTIZA AHORA</a></div>
+        <div class="insurance-card" id="vehiculos"><div class="insurance-icon"><i class="fas fa-car"></i></div><h3>Seguro de Autos</h3><p>Cobertura completa: todo riesgo, responsabilidad civil y asistencia en via.</p><a href="https://www.suraenlinea.com/movilidad/sura/seguro-de-carro?asesor=5340" target="_blank" class="btn-card">COTIZA EN LINEA</a></div>
+        <div class="insurance-card" id="viajes"><div class="insurance-icon"><i class="fas fa-plane-departure"></i></div><h3>Seguro de Viajes</h3><p>Viaja tranquilo con cobertura medica, cancelacion de vuelos y asistencia 24/7 en el exterior. 100% digital.</p><a href="https://www.suraenlinea.com/viajes/sura?codigoAsesor=53406" target="_blank" class="btn-card">COTIZA EN LINEA</a></div>
+        <div class="insurance-card" id="arrendamiento"><div class="insurance-icon"><i class="fas fa-file-signature"></i></div><h3>Arrendamiento Digital</h3><p>Protege tu inmueble en arriendo con poliza 100% digital. Proceso rapido y sin papeleos.</p><a href="https://www.suraenlinea.com/arrendamiento-digital/sura/cotizacion/calculadora?asesor=53406" target="_blank" class="btn-card">COTIZA EN LINEA</a></div>
+        <div class="insurance-card" id="arrendamiento-trad"><div class="insurance-icon"><i class="fas fa-building"></i></div><h3>Arrendamiento Tradicional</h3><p>Seguro de arrendamiento con respaldo y confianza para propietarios e inquilinos.</p><a href="https://segurossuhabit.com/asesor/53406/landing" target="_blank" class="btn-card">COTIZA EN LINEA</a></div>
+        <div class="insurance-card" id="credito-vehiculo"><div class="insurance-icon"><i class="fas fa-money-check-alt"></i></div><h3>Credito para Vehiculo</h3><p>Financia tu vehiculo o compra de cartera con las mejores condiciones del mercado.</p><a href="https://www.surafinancia.com.co/laura/53406" target="_blank" class="btn-card">SOLICITA AHORA</a></div>
+        <div class="insurance-card" id="empresarial"><div class="insurance-icon"><i class="fas fa-briefcase"></i></div><h3>Seguro Empresarial</h3><p>Protege tu negocio, empleados y activos con soluciones para empresas de cualquier tamano.</p><a href="#contacto" class="btn-card">COTIZA AHORA</a></div>
         <div class="insurance-card featured"><div class="insurance-icon"><i class="fas fa-star"></i></div><h3>Plan Familiar 360</h3><p>Nuestro plan mas completo: vida, salud y hogar en un solo producto para familias colombianas.</p><a href="#contacto" class="btn-card btn-featured">VER PLAN COMPLETO</a></div>
       </div>
     </div>
@@ -222,7 +236,20 @@
             <div class="form-group"><label>Correo electronico *</label><input type="email" placeholder="tu@correo.com" required/></div>
             <div class="form-group"><label>WhatsApp / Telefono *</label><input type="tel" placeholder="+57 300 000 0000" required/></div>
             <div class="form-group"><label>Tipo de seguro *</label>
-              <select required><option value="">Selecciona...</option><option>Seguro de Vida</option><option>Seguro de Salud</option><option>Seguro de Hogar</option><option>Seguro de Vehiculos</option><option>Seguro Empresarial</option><option>Plan Familiar 360</option><option>No se, necesito orientacion</option></select>
+              <select required>
+                <option value="">Selecciona...</option>
+                <option>Seguro de Vida</option>
+                <option>Seguro de Salud</option>
+                <option>Seguro de Hogar</option>
+                <option>Seguro de Autos</option>
+                <option>Seguro de Viajes</option>
+                <option>Arrendamiento Digital</option>
+                <option>Arrendamiento Tradicional</option>
+                <option>Credito para Vehiculo</option>
+                <option>Seguro Empresarial</option>
+                <option>Plan Familiar 360</option>
+                <option>No se, necesito orientacion</option>
+              </select>
             </div>
             <div class="form-group"><label>Cuentanos mas (opcional)</label><textarea rows="3" placeholder="Que necesitas proteger?"></textarea></div>
             <button type="submit" class="btn-primary btn-full">SOLICITAR COTIZACION GRATIS</button>
@@ -237,11 +264,11 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <img src="https://royerhernandez.github.io/FamiliasSegurasRepo/imagenes/Logos/pp.jfif" alt="Logo" class="footer-logo"/>
+            <img src="assets/img/logos/logo fam2 (1) (1).png" alt="Logo" class="footer-logo"/>
             <p>Protegemos lo que mas importa: tu familia, tu salud y tu patrimonio.</p>
             <div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="https://wa.me/573000000000"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-tiktok"></i></a></div>
           </div>
-          <div class="footer-links"><h4>Seguros</h4><ul><li><a href="#vida">Seguro de Vida</a></li><li><a href="#salud">Seguro de Salud</a></li><li><a href="#hogar">Seguro de Hogar</a></li><li><a href="#vehiculos">Seguro de Vehiculos</a></li><li><a href="#empresarial">Seguro Empresarial</a></li><li><a href="#seguros">Plan Familiar 360</a></li></ul></div>
+          <div class="footer-links"><h4>Seguros</h4><ul><li><a href="#vida">Seguro de Vida</a></li><li><a href="#salud">Seguro de Salud</a></li><li><a href="#hogar">Seguro de Hogar</a></li><li><a href="#vehiculos">Seguro de Autos</a></li><li><a href="#viajes">Seguro de Viajes</a></li><li><a href="#arrendamiento">Arrendamiento Digital</a></li><li><a href="#arrendamiento-trad">Arrendamiento Tradicional</a></li><li><a href="#credito-vehiculo">Credito para Vehiculo</a></li><li><a href="#empresarial">Seguro Empresarial</a></li><li><a href="#seguros">Plan Familiar 360</a></li></ul></div>
           <div class="footer-links"><h4>Empresa</h4><ul><li><a href="#equipo">Nuestro Equipo</a></li><li><a href="#proceso">Como funciona?</a></li><li><a href="#blog">Blog</a></li><li><a href="#">Trabaja con nosotros</a></li><li><a href="#">Material Gratuito</a></li></ul></div>
           <div class="footer-newsletter"><h4>Newsletter</h4><p>Recibe consejos para proteger mejor a tu familia</p><form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)"><input type="email" placeholder="Tu correo" required/><button type="submit"><i class="fas fa-paper-plane"></i></button></form></div>
         </div>
@@ -251,6 +278,6 @@
   </footer>
   <a href="https://wa.me/573000000000?text=Hola,%20deseo%20conocer%20mas%20sobre%20seguros." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i><span class="whatsapp-tooltip">Necesitas ayuda?</span></a>
   <button class="scroll-top" id="scroll-top"><i class="fas fa-chevron-up"></i></button>
-  <script src="js/script.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

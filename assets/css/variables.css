@@ -1,0 +1,31 @@
+/* ========================================
+   VARIABLES - Design Tokens
+   ======================================== */
+
+:root {
+  /* Colors */
+  --primary: #73CBD9;
+  --primary-dark: #006170;
+  --navy: #11235E;
+  --light: #F4FBFF;
+  --white: #FFFFFF;
+  --text-dark: #1a1a2e;
+  --text-medium: #4a4a6a;
+  --border: #e0eff5;
+
+  /* Shadows */
+  --shadow: 0 4px 20px rgba(0, 97, 112, 0.12);
+  --shadow-lg: 0 8px 40px rgba(0, 97, 112, 0.18);
+
+  /* Radius */
+  --radius: 12px;
+  --radius-lg: 20px;
+
+  /* Transitions */
+  --transition: all 0.3s ease;
+
+  /* Typography */
+  --font-display: 'Urbanist', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+}
