@@ -336,3 +336,145 @@
   background: var(--primary-dark);
   transform: scale(1.2);
 }
+
+/* --- WhatsApp Testimonial --- */
+
+.wa-testimonial {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 0;
+  overflow: hidden;
+  max-width: 480px;
+  margin: 2.5rem auto 0;
+}
+
+.wa-testimonial-header {
+  background: #075E54;
+  color: var(--white);
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.wa-testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.wa-testimonial-name {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.wa-testimonial-status {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.wa-testimonial-body {
+  background: #ECE5DD;
+  padding: 1rem 1.2rem;
+}
+
+.wa-bubble {
+  background: #DCF8C6;
+  border-radius: 0 12px 12px 12px;
+  padding: 0.8rem 1rem;
+  position: relative;
+  max-width: 90%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.wa-bubble::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -8px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid #DCF8C6;
+  border-left: 8px solid transparent;
+}
+
+.wa-bubble-audio {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.wa-play-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #075E54;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.wa-play-btn:hover {
+  background: #25D366;
+}
+
+.wa-audio-wave {
+  flex: 1;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.wa-audio-wave span {
+  display: inline-block;
+  width: 3px;
+  background: #075E54;
+  border-radius: 2px;
+  opacity: 0.5;
+}
+
+.wa-audio-wave span.active {
+  opacity: 1;
+}
+
+.wa-audio-duration {
+  font-size: 0.75rem;
+  color: #667781;
+  flex-shrink: 0;
+}
+
+.wa-bubble-text {
+  font-size: 0.9rem;
+  color: #303030;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+.wa-bubble-time {
+  text-align: right;
+  font-size: 0.7rem;
+  color: #667781;
+  margin-top: 0.3rem;
+}
+
+.wa-bubble-time i {
+  color: #53BDEB;
+  margin-left: 0.2rem;
+}

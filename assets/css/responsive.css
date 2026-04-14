@@ -16,6 +16,10 @@
   .method-image {
     display: none;
   }
+
+  .family-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* --- Mobile --- */
@@ -91,6 +95,21 @@
 
   .testimonial-card {
     min-width: calc(100% - 1rem);
+  }
+
+  .team-showcase {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .team-showcase .team-social {
+    justify-content: center;
+  }
+
+
+  .family-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px;
   }
 
   .footer-grid {

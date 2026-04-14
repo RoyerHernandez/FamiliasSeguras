@@ -161,6 +161,70 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* --- WhatsApp Audio Player --- */
+  const waAudio = document.getElementById('wa-audio');
+  const waPlayBtn = document.getElementById('wa-play-btn');
+  const waWave = document.getElementById('wa-audio-wave');
+  const waDuration = document.getElementById('wa-audio-duration');
+
+  if (waAudio && waPlayBtn && waWave && waDuration) {
+    // Generate wave bars
+    const barCount = 40;
+    const barHeights = [];
+    for (let i = 0; i < barCount; i++) {
+      const h = Math.floor(Math.random() * 20) + 6;
+      barHeights.push(h);
+      const bar = document.createElement('span');
+      bar.style.height = h + 'px';
+      waWave.appendChild(bar);
+    }
+
+    // Start playback from second 35
+    const startTime = 35;
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return m + ':' + String(s).padStart(2, '0');
+    }
+
+    waAudio.addEventListener('loadedmetadata', () => {
+      waDuration.textContent = formatTime(waAudio.duration - startTime);
+    });
+
+    waPlayBtn.addEventListener('click', () => {
+      if (waAudio.paused) {
+        if (waAudio.currentTime < startTime) {
+          waAudio.currentTime = startTime;
+        }
+        waAudio.play();
+        waPlayBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      } else {
+        waAudio.pause();
+        waPlayBtn.innerHTML = '<i class="fas fa-play"></i>';
+      }
+    });
+
+    waAudio.addEventListener('timeupdate', () => {
+      const elapsed = waAudio.currentTime - startTime;
+      const total = waAudio.duration - startTime;
+      const progress = Math.max(0, elapsed / total);
+      const activeBars = Math.floor(progress * barCount);
+
+      waWave.querySelectorAll('span').forEach((bar, i) => {
+        bar.classList.toggle('active', i <= activeBars);
+      });
+
+      waDuration.textContent = formatTime(Math.max(0, total - elapsed));
+    });
+
+    waAudio.addEventListener('ended', () => {
+      waPlayBtn.innerHTML = '<i class="fas fa-play"></i>';
+      waWave.querySelectorAll('span').forEach(bar => bar.classList.remove('active'));
+      waDuration.textContent = formatTime(waAudio.duration - startTime);
+    });
+  }
+
   /* --- Form validation helpers --- */
 
   function validateEmail(email) {
