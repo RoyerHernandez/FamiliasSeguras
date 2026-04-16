@@ -57,12 +57,12 @@
 }
 
 .hero-image img {
-  border-radius: 40% 40% 40% 40% / 50% 50% 50% 50%;
+  border-radius: 30px;
   box-shadow: 0 8px 40px rgba(37, 99, 235, 0.25);
   max-height: 560px;
   object-fit: cover;
-  object-position: 65% center;
-  width: 90%;
+  object-position: center;
+  width: 100%;
   border: 3px solid var(--royal-blue);
 }
 
