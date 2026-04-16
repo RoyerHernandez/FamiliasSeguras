@@ -10,14 +10,15 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--primary);
-  box-shadow: 0 2px 10px rgba(0, 97, 112, 0.2);
+  background: rgba(11, 11, 15, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   transition: var(--transition);
+  backdrop-filter: blur(10px);
 }
 
 .header.scrolled {
-  background: rgba(115, 203, 217, 0.97);
-  backdrop-filter: blur(10px);
+  background: rgba(11, 11, 15, 0.98);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
 .header-inner {
@@ -36,8 +37,8 @@
   height: 52px;
   width: 52px;
   object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid var(--white);
+  border-radius: 10px;
+  border: 2px solid var(--royal-blue);
 }
 
 /* --- Navigation --- */
@@ -58,7 +59,7 @@
   font-family: var(--font-heading);
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--text-medium);
   letter-spacing: 0;
   transition: var(--transition);
   border-radius: 4px;
@@ -67,19 +68,19 @@
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--primary-dark);
-  background: rgba(255, 255, 255, 0.4);
+  color: var(--white);
+  background: rgba(37, 99, 235, 0.15);
 }
 
 .nav-cta {
-  background: var(--primary-dark);
+  background: var(--royal-blue);
   color: var(--white) !important;
   padding: 0.5rem 1.2rem;
   border-radius: 4px;
 }
 
 .nav-cta:hover {
-  background: var(--navy) !important;
+  background: var(--royal-blue-light) !important;
   color: var(--white) !important;
 }
 
@@ -93,7 +94,7 @@
   position: absolute;
   top: 110%;
   left: 0;
-  background: var(--white);
+  background: var(--dark-card);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
   min-width: 200px;
@@ -102,7 +103,7 @@
   visibility: hidden;
   transform: translateY(-8px);
   transition: var(--transition);
-  border: 1px solid var(--border);
+  border: 1px solid var(--dark-border);
 }
 
 .nav-dropdown:hover .dropdown-menu {
@@ -115,14 +116,14 @@
   display: block;
   padding: 0.6rem 1.2rem;
   font-size: 0.9rem;
-  color: var(--text-dark);
+  color: var(--text-medium);
   transition: var(--transition);
   font-family: var(--font-body);
 }
 
 .dropdown-menu li a:hover {
-  background: var(--light);
-  color: var(--primary-dark);
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--royal-blue-light);
   padding-left: 1.6rem;
 }
 
@@ -135,14 +136,14 @@
 }
 
 .header-social a {
-  color: var(--navy);
+  color: var(--text-medium);
   font-size: 1rem;
   transition: var(--transition);
   padding: 0.3rem;
 }
 
 .header-social a:hover {
-  color: var(--primary-dark);
+  color: var(--royal-blue-light);
   transform: translateY(-2px);
 }
 
@@ -162,7 +163,7 @@
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--navy);
+  background: var(--white);
   transition: var(--transition);
   border-radius: 2px;
 }
@@ -182,8 +183,9 @@
 /* --- Footer --- */
 
 .footer {
-  background: var(--primary-dark);
+  background: var(--dark-surface);
   color: var(--white);
+  border-top: 1px solid var(--dark-border);
 }
 
 .footer-top {
@@ -200,13 +202,13 @@
   width: 70px;
   height: 70px;
   object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid var(--primary);
+  border-radius: 10px;
+  border: 2px solid var(--royal-blue);
   margin-bottom: 1rem;
 }
 
 .footer-brand p {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-medium);
   font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 1.5rem;
@@ -220,7 +222,7 @@
 .footer-social a {
   width: 38px;
   height: 38px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(37, 99, 235, 0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -231,7 +233,7 @@
 }
 
 .footer-social a:hover {
-  background: var(--primary);
+  background: var(--royal-blue);
   transform: translateY(-3px);
 }
 
@@ -240,7 +242,7 @@
   font-family: var(--font-heading);
   font-size: 1.1rem;
   margin-bottom: 1.2rem;
-  color: var(--primary);
+  color: var(--royal-blue-light);
 }
 
 .footer-links ul li {
@@ -248,18 +250,18 @@
 }
 
 .footer-links ul li a {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-medium);
   font-size: 0.9rem;
   transition: var(--transition);
 }
 
 .footer-links ul li a:hover {
-  color: var(--primary);
+  color: var(--royal-blue-light);
   padding-left: 0.3rem;
 }
 
 .footer-newsletter p {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-medium);
   font-size: 0.9rem;
   margin-bottom: 1rem;
   line-height: 1.6;
@@ -270,44 +272,43 @@
   gap: 0;
   border-radius: 8px;
   overflow: hidden;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--royal-blue);
 }
 
 .newsletter-form input {
   flex: 1;
   padding: 0.7rem 1rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(37, 99, 235, 0.1);
   border: none;
   color: var(--white);
   font-size: 0.9rem;
 }
 
 .newsletter-form input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-muted);
 }
 
 .newsletter-form input:focus {
   outline: none;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(37, 99, 235, 0.15);
 }
 
 .newsletter-form button {
   padding: 0.7rem 1.2rem;
-  background: var(--primary);
+  background: var(--royal-blue);
   border: none;
-  color: var(--navy);
+  color: var(--white);
   cursor: pointer;
   font-size: 1rem;
   transition: var(--transition);
 }
 
 .newsletter-form button:hover {
-  background: var(--white);
-  color: var(--primary-dark);
+  background: var(--royal-blue-light);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--dark-border);
   padding: 1.5rem 0;
 }
 
@@ -320,12 +321,12 @@
 }
 
 .footer-bottom p {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
   font-size: 0.85rem;
 }
 
 .footer-bottom a {
-  color: var(--primary);
+  color: var(--royal-blue-light);
   transition: var(--transition);
 }
 
@@ -364,7 +365,7 @@
   right: 110%;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--navy);
+  background: var(--dark-card);
   color: var(--white);
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
@@ -374,6 +375,7 @@
   visibility: hidden;
   transition: var(--transition);
   pointer-events: none;
+  border: 1px solid var(--dark-border);
 }
 
 .whatsapp-float:hover .whatsapp-tooltip {
@@ -392,7 +394,7 @@
   right: 1.5rem;
   width: 44px;
   height: 44px;
-  background: var(--primary-dark);
+  background: var(--royal-blue);
   color: var(--white);
   border: none;
   border-radius: 50%;
@@ -414,6 +416,6 @@
 }
 
 .scroll-top:hover {
-  background: var(--navy);
+  background: var(--royal-blue-dark);
   transform: translateY(-3px);
 }

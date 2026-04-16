@@ -3,19 +3,30 @@
    ======================================== */
 
 :root {
-  /* Colors */
+  /* Colors - Dark Theme */
   --primary: #73CBD9;
   --primary-dark: #006170;
+  --royal-blue: #2563EB;
+  --royal-blue-dark: #1E3A8A;
+  --royal-blue-light: #3B82F6;
   --navy: #11235E;
-  --light: #F4FBFF;
+  --dark-bg: #0B0B0F;
+  --dark-surface: #141419;
+  --dark-card: #1A1A22;
+  --dark-border: #2A2A35;
   --white: #FFFFFF;
-  --text-dark: #1a1a2e;
-  --text-medium: #4a4a6a;
-  --border: #e0eff5;
+  --text-light: #F1F1F3;
+  --text-medium: #A0A0B0;
+  --text-muted: #6B6B7B;
+  --border: #2A2A35;
+
+  /* Accents */
+  --accent-green: #25D366;
+  --accent-gold: #F59E0B;
 
   /* Shadows */
-  --shadow: 0 4px 20px rgba(0, 97, 112, 0.12);
-  --shadow-lg: 0 8px 40px rgba(0, 97, 112, 0.18);
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.45);
 
   /* Radius */
   --radius: 12px;
