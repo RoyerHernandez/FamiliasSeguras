@@ -12,7 +12,7 @@
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
-  padding: 7rem 1.5rem 3rem;
+  padding: 10rem 1.5rem 3rem;
   align-items: center;
 }
 
@@ -59,10 +59,10 @@
 .hero-image img {
   border-radius: 40% 40% 40% 40% / 50% 50% 50% 50%;
   box-shadow: 0 8px 40px rgba(37, 99, 235, 0.25);
-  max-height: 500px;
+  max-height: 560px;
   object-fit: cover;
-  object-position: top center;
-  width: 85%;
+  object-position: 65% center;
+  width: 90%;
   border: 3px solid var(--royal-blue);
 }
 

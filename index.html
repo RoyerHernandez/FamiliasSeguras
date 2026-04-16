@@ -71,6 +71,29 @@
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
   </header>
+  <!-- Indicadores Económicos - TradingView Ticker -->
+  <div class="ticker-wrapper">
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+        "symbols": [
+          {"proName": "FX_IDC:USDCOP", "title": "TRM USD/COP"},
+          {"proName": "NASDAQ:NDX", "title": "NASDAQ"},
+          {"proName": "SP:SPX", "title": "S&P 500"},
+          {"proName": "TVC:US10Y", "title": "US10Y Treasury"},
+          {"proName": "TVC:DXY", "title": "DXY"},
+          {"proName": "NYMEX:CL1!", "title": "Petróleo WTI"}
+        ],
+        "showSymbolLogo": true,
+        "isTransparent": true,
+        "displayMode": "adaptive",
+        "colorTheme": "dark",
+        "locale": "es"
+      }
+      </script>
+    </div>
+  </div>
   <section class="hero" id="inicio">
     <div class="hero-content">
       <h1 class="hero-title">Cuidamos el presente<br/><span class="hero-highlight">para proteger el futuro</span></h1>
@@ -105,14 +128,6 @@
           </div>
         </div>
         <div class="family-gallery-item">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&q=80" alt="Mujer saludable y tranquila"/>
-          <div class="family-gallery-overlay">
-            <i class="fas fa-heartbeat"></i>
-            <h3>Salud</h3>
-            <p>La mejor atención cuando más la necesitas</p>
-          </div>
-        </div>
-        <div class="family-gallery-item">
           <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&q=80" alt="Hogar familiar acogedor"/>
           <div class="family-gallery-overlay">
             <i class="fas fa-home"></i>
@@ -128,12 +143,20 @@
             <p>Viaja tranquilo, nosotros te respaldamos</p>
           </div>
         </div>
-        <div class="family-gallery-item family-gallery-wide">
+        <div class="family-gallery-item">
           <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&q=80" alt="Hogar seguro para tu familia"/>
           <div class="family-gallery-overlay">
             <i class="fas fa-key"></i>
             <h3>Arrendamiento</h3>
             <p>Tu inmueble siempre respaldado con la mejor póliza</p>
+          </div>
+        </div>
+        <div class="family-gallery-item">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&q=80" alt="Mujer saludable y tranquila"/>
+          <div class="family-gallery-overlay">
+            <i class="fas fa-heartbeat"></i>
+            <h3>Salud</h3>
+            <p>La mejor atención cuando más la necesitas</p>
           </div>
         </div>
       </div>
@@ -164,9 +187,9 @@
         <div class="insurance-card" id="hogar"><img src="assets/img/logos/icon-hogar.jpeg" alt="Seguro de hogar" class="insurance-icon-img"/><h3>Protección integral para tu hogar</h3><p>Protege tu vivienda frente a incendios, robos, inundaciones y daños estructurales. Tu hogar merece estar seguro.</p><a href="#contacto" class="btn-card">COTIZA AHORA</a></div>
         <div class="insurance-card" id="vehiculos"><img src="assets/img/logos/icon-motos.jpeg" alt="Seguro de movilidad" class="insurance-icon-img"/><h3>Seguro de movilidad</h3><p>Cobertura completa para tu auto, moto o bicicleta: todo riesgo, responsabilidad civil y asistencia en vía.</p><a href="https://www.suraenlinea.com/movilidad/sura/seguro-de-carro?asesor=53406" target="_blank" class="btn-card">COTIZA EN LÍNEA</a></div>
         <div class="insurance-card" id="viajes"><img src="assets/img/logos/icon-viajes.jpeg" alt="Seguro de viajes" class="insurance-icon-img"/><h3>Seguro de viajes</h3><p>Viaja tranquilo con cobertura médica, cancelación de vuelos y asistencia 24/7 en el exterior. 100% digital.</p><a href="https://www.suraenlinea.com/viajes/sura?codigoAsesor=53406" target="_blank" class="btn-card">COTIZA EN LÍNEA</a></div>
-        <div class="insurance-card" id="arrendamiento"><img src="assets/img/logos/icon-hogar.jpeg" alt="Arrendamiento digital" class="insurance-icon-img"/><h3>Arrendamiento digital</h3><p>Protege tu inmueble en arriendo con póliza 100% digital. Proceso rápido y sin papeleos.</p><a href="https://www.suraenlinea.com/arrendamiento-digital/sura/cotizacion/calculadora?asesor=53406" target="_blank" class="btn-card">COTIZA EN LÍNEA</a></div>
-        <div class="insurance-card" id="arrendamiento-trad"><img src="assets/img/logos/icon-hogar.jpeg" alt="Arrendamiento tradicional" class="insurance-icon-img"/><h3>Arrendamiento tradicional</h3><p>Protección especializada para total tranquilidad. Respaldo jurídico y acompañamiento legal para propietarios e inquilinos.</p><a href="https://segurossuhabit.com/asesor/53406/landing" target="_blank" class="btn-card">COTIZA EN LÍNEA</a></div>
-        <div class="insurance-card" id="credito-vehiculo"><img src="assets/img/logos/icon-motos.jpeg" alt="Crédito vehículo" class="insurance-icon-img"/><h3>Crédito para vehículo</h3><p>Más bancos, una sola solicitud. Financia tu vehículo o compra de cartera con las mejores condiciones del mercado.</p><a href="https://www.surafinancia.com.co/laura/53406" target="_blank" class="btn-card">SOLICITA AHORA</a><a href="https://wa.me/573112206252?text=Hola,%20me%20interesa%20un%20cr%C3%A9dito%20para%20veh%C3%ADculo" target="_blank" class="btn-card" style="margin-left:.5rem;border-color:#25D366;color:#25D366"><i class="fab fa-whatsapp"></i> ASESOR</a></div>
+        <div class="insurance-card" id="arrendamiento"><img src="assets/img/logos/icon-arrendamiento.jpeg" alt="Arrendamiento digital" class="insurance-icon-img"/><h3>Arrendamiento digital</h3><p>Protege tu inmueble en arriendo con póliza 100% digital. Proceso rápido y sin papeleos.</p><a href="https://www.suraenlinea.com/arrendamiento-digital/sura/cotizacion/calculadora?asesor=53406" target="_blank" class="btn-card">COTIZA EN LÍNEA</a></div>
+        <div class="insurance-card" id="arrendamiento-trad"><img src="assets/img/logos/icon-arrendamiento.jpeg" alt="Arrendamiento tradicional" class="insurance-icon-img"/><h3>Arrendamiento tradicional</h3><p>Protección especializada para total tranquilidad. Respaldo jurídico y acompañamiento legal para propietarios e inquilinos.</p><a href="https://segurossuhabit.com/asesor/53406/landing" target="_blank" class="btn-card">COTIZA EN LÍNEA</a></div>
+        <div class="insurance-card" id="credito-vehiculo"><img src="assets/img/logos/icon-credito.jpeg" alt="Crédito vehículo" class="insurance-icon-img"/><h3>Crédito para vehículo</h3><p>Más bancos, una sola solicitud. Financia tu vehículo o compra de cartera con las mejores condiciones del mercado.</p><a href="https://www.surafinancia.com.co/laura/53406" target="_blank" class="btn-card">SOLICITA AHORA</a><a href="https://wa.me/573112206252?text=Hola,%20me%20interesa%20un%20cr%C3%A9dito%20para%20veh%C3%ADculo" target="_blank" class="btn-card" style="margin-left:.5rem;border-color:#25D366;color:#25D366"><i class="fab fa-whatsapp"></i> ASESOR</a></div>
         <div class="insurance-card" id="empresarial"><img src="assets/img/logos/icon-arl.jpeg" alt="Seguro empresarial" class="insurance-icon-img"/><h3>Seguro empresarial</h3><p>Planes de protección según la actividad de tu empresa. Protege tu negocio, empleados y activos.</p><a href="#contacto" class="btn-card">COTIZA AHORA</a><a href="https://wa.me/573182070381?text=Hola,%20me%20interesa%20el%20seguro%20empresarial" target="_blank" class="btn-card" style="margin-left:.5rem;border-color:#25D366;color:#25D366"><i class="fab fa-whatsapp"></i> WHATSAPP</a></div>
         <div class="insurance-card featured"><img src="assets/img/logos/icon-familia.jpeg" alt="Plan Familiar 360" class="insurance-icon-img" style="border-color:var(--royal-blue-light)"/><h3>Plan Familiar 360</h3><p>Nuestro plan más completo: vida, salud y hogar en un solo producto para familias colombianas.</p><a href="#plan360" class="btn-card btn-featured">VER PLAN COMPLETO</a></div>
       </div>
@@ -251,7 +274,7 @@
           <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Jhoana es una persona muy comprometida con sus labores y se nota su pasión, compromiso y responsabilidad en lo que emprende. Tiene una gran capacidad para generar confianza y lograr que sus clientes se sientan bien acompañados."</p><div class="testimonial-author"><strong>Alexandra Gómez Esteban</strong><span>Directora comercial</span></div><div class="testimonial-linkedin"><i class="fab fa-linkedin"></i> Recomendación en LinkedIn</div></div>
           <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Conozco a Jhoana desde hace un tiempo, es una persona que se destaca por su profesionalismo y capacidad de análisis. Siempre va un paso adelante para ofrecer las mejores soluciones de protección a sus clientes."</p><div class="testimonial-author"><strong>Juan Guillermo Franco Carrillo</strong><span>Web Developer PHP/Laravel</span></div><div class="testimonial-linkedin"><i class="fab fa-linkedin"></i> Recomendación en LinkedIn</div></div>
           <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Una profesional que genera confianza desde el primer momento. Su conocimiento del sector y su trato humano hacen que la experiencia de asesoramiento sea completamente diferente a lo que estamos acostumbrados."</p><div class="testimonial-author"><strong>Diana Alexandra Barrero Angarita</strong><span>Farmacovigilancia</span></div><div class="testimonial-linkedin"><i class="fab fa-linkedin"></i> Recomendación en LinkedIn</div></div>
-          <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Excelente asesora, muy profesional y dedicada. Te explica cada detalle de las coberturas y siempre busca la mejor opción según tu presupuesto y necesidades. 100% recomendada."</p><div class="testimonial-author"><strong>Cristian Murillo Villegas</strong><span>Gerente general</span></div><div class="testimonial-linkedin"><i class="fab fa-linkedin"></i> Recomendación en LinkedIn</div></div>
+          <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Extraordinaria profesional con grandes conocimientos comerciales, especialmente en el área de seguros. Calidad, servicio y verdad, sus más grandes cualidades."</p><div class="testimonial-author"><strong>Cristian Murillo Villegas</strong><span>Gerente General / Vice Presidente Operaciones</span></div><div class="testimonial-linkedin"><i class="fab fa-linkedin"></i> Recomendación en LinkedIn</div></div>
         </div>
       </div>
       <div class="carousel-controls">
@@ -285,13 +308,14 @@
   <section class="blog-section" id="blog">
     <div class="container">
       <h2 class="section-title text-center">Actualízate</h2>
-      <p class="section-subtitle text-center">Aprende a proteger tu familia con información clara y práctica</p>
-      <div class="blog-grid">
+      <p class="section-subtitle text-center">Noticias del sector asegurador colombiano en tiempo real</p>
+      <div class="blog-grid" id="blog-grid">
+        <!-- Contenido estático de respaldo (se reemplaza si el RSS carga) -->
         <article class="blog-card"><div class="blog-image"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80" alt="Blog"/><span class="blog-tag">Seguros de vida</span></div><div class="blog-content"><h3>¿Qué seguro de vida necesitas si eres independiente?</h3><p>Si trabajas por tu cuenta, nadie cubre tus ingresos si quedas incapacitado. Descubre cómo protegerte...</p><a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a></div></article>
         <article class="blog-card"><div class="blog-image"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80" alt="Blog"/><span class="blog-tag">Salud</span></div><div class="blog-content"><h3>Los 5 errores más comunes al comprar un seguro de salud</h3><p>Muchas familias pagan más de lo necesario por no revisar estos puntos clave...</p><a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a></div></article>
         <article class="blog-card"><div class="blog-image"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80" alt="Blog"/><span class="blog-tag">Hogar</span></div><div class="blog-content"><h3>¿Vale la pena asegurar tu vivienda en arriendo?</h3><p>El seguro de contenidos es más accesible de lo que crees y cubre lo que más valoras...</p><a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a></div></article>
       </div>
-      <div class="text-center" style="margin-top:2rem"><a href="#" class="btn-outline">CONOCE MÁS ARTÍCULOS</a></div>
+      <div class="text-center" style="margin-top:2rem"><a href="https://fasecolda.com/noticias/" target="_blank" class="btn-outline">VER MÁS EN FASECOLDA</a></div>
     </div>
   </section>
   <section class="contact-section" id="contacto">

@@ -278,7 +278,7 @@
 }
 
 .testimonial-card {
-  min-width: calc(33.333% - 1rem);
+  min-width: 0;
   background: var(--dark-card);
   padding: 2rem;
   border-radius: var(--radius);

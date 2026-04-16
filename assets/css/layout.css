@@ -2,11 +2,29 @@
    LAYOUT - Header, Footer, Navigation
    ======================================== */
 
+/* --- Ticker --- */
+
+.ticker-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  background: var(--dark-bg);
+  border-bottom: 1px solid var(--dark-border);
+  height: 46px;
+  overflow: hidden;
+}
+
+.ticker-wrapper .tradingview-widget-container {
+  height: 46px;
+}
+
 /* --- Header --- */
 
 .header {
   position: fixed;
-  top: 0;
+  top: 46px;
   left: 0;
   right: 0;
   z-index: 1000;
