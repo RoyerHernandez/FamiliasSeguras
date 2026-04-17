@@ -360,50 +360,5 @@ document.addEventListener('DOMContentLoaded', () => {
     form.reset();
   };
 
-  /* --- Blog RSS Feed (Fasecolda) --- */
-  const blogGrid = document.getElementById('blog-grid');
-
-  if (blogGrid) {
-    const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Ffasecolda.com%2Ffeed%2F&count=3';
-
-    fetch(RSS_URL)
-      .then(res => res.json())
-      .then(data => {
-        if (data.status !== 'ok' || !data.items || data.items.length === 0) return;
-
-        const defaultImages = [
-          'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80',
-          'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80',
-          'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80'
-        ];
-
-        const articles = data.items.slice(0, 3).map((item, i) => {
-          const img = item.thumbnail || item.enclosure?.link || defaultImages[i];
-          const desc = item.description
-            ? item.description.replace(/<[^>]*>/g, '').substring(0, 120) + '...'
-            : '';
-          const date = new Date(item.pubDate).toLocaleDateString('es-CO', {
-            day: 'numeric', month: 'short', year: 'numeric'
-          });
-
-          return `<article class="blog-card">
-            <div class="blog-image">
-              <img src="${img}" alt="${item.title}" onerror="this.src='${defaultImages[i]}'"/>
-              <span class="blog-tag">${date}</span>
-            </div>
-            <div class="blog-content">
-              <h3>${item.title}</h3>
-              <p>${desc}</p>
-              <a href="${item.link}" target="_blank" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </article>`;
-        });
-
-        blogGrid.innerHTML = articles.join('');
-      })
-      .catch(() => {
-        // Mantiene el contenido estático de respaldo
-      });
-  }
 
 });
