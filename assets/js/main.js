@@ -165,6 +165,97 @@ document.addEventListener('DOMContentLoaded', () => {
     createDots();
   }
 
+  /* --- Gallery Carousel --- */
+  const galleryCarousel = document.getElementById('gallery-carousel');
+  const galleryTrack = document.getElementById('gallery-track');
+  const galleryPrev = document.getElementById('gallery-prev');
+  const galleryNext = document.getElementById('gallery-next');
+  const galleryDotsContainer = document.getElementById('gallery-dots');
+
+  if (galleryCarousel && galleryTrack && galleryPrev && galleryNext && galleryDotsContainer) {
+    const galleryCards = galleryTrack.querySelectorAll('.gallery-card');
+    let galleryIndex = 0;
+    let galleryPerView = getGalleryPerView();
+    const galleryGap = 24;
+
+    function getGalleryPerView() {
+      if (window.innerWidth <= 480) return 1;
+      if (window.innerWidth <= 768) return 2;
+      if (window.innerWidth <= 1024) return 3;
+      return 4;
+    }
+
+    function getGalleryCardWidth() {
+      const containerWidth = galleryCarousel.offsetWidth;
+      return (containerWidth - galleryGap * (galleryPerView - 1)) / galleryPerView;
+    }
+
+    function setGalleryCardWidths() {
+      const cardWidth = getGalleryCardWidth();
+      galleryCards.forEach(card => {
+        card.style.width = cardWidth + 'px';
+        card.style.minWidth = cardWidth + 'px';
+      });
+    }
+
+    function getGalleryPages() {
+      return Math.max(1, galleryCards.length - galleryPerView + 1);
+    }
+
+    function createGalleryDots() {
+      galleryDotsContainer.innerHTML = '';
+      const totalPages = getGalleryPages();
+      for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('button');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToGallerySlide(i));
+        galleryDotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateGalleryDots() {
+      galleryDotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === galleryIndex);
+      });
+    }
+
+    function goToGallerySlide(index) {
+      const totalPages = getGalleryPages();
+      galleryIndex = Math.max(0, Math.min(index, totalPages - 1));
+      const cardWidth = getGalleryCardWidth() + galleryGap;
+      galleryTrack.style.transform = `translateX(-${galleryIndex * cardWidth}px)`;
+      updateGalleryDots();
+    }
+
+    galleryPrev.addEventListener('click', () => goToGallerySlide(galleryIndex - 1));
+    galleryNext.addEventListener('click', () => goToGallerySlide(galleryIndex + 1));
+
+    // Auto-play
+    let galleryAutoPlay = setInterval(() => {
+      const totalPages = getGalleryPages();
+      goToGallerySlide(galleryIndex >= totalPages - 1 ? 0 : galleryIndex + 1);
+    }, 4000);
+
+    galleryTrack.addEventListener('mouseenter', () => clearInterval(galleryAutoPlay));
+    galleryTrack.addEventListener('mouseleave', () => {
+      galleryAutoPlay = setInterval(() => {
+        const totalPages = getGalleryPages();
+        goToGallerySlide(galleryIndex >= totalPages - 1 ? 0 : galleryIndex + 1);
+      }, 4000);
+    });
+
+    window.addEventListener('resize', () => {
+      galleryPerView = getGalleryPerView();
+      setGalleryCardWidths();
+      createGalleryDots();
+      goToGallerySlide(0);
+    });
+
+    setGalleryCardWidths();
+    createGalleryDots();
+  }
+
   /* --- Scroll to top button --- */
   const scrollTopBtn = document.getElementById('scroll-top');
 

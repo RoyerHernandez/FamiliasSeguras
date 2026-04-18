@@ -81,35 +81,50 @@
   background: var(--dark-bg);
 }
 
-.family-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 220px;
-  gap: 1rem;
+.gallery-carousel {
+  overflow: hidden;
   margin-top: 2.5rem;
 }
 
-.family-gallery-item {
+.gallery-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card {
+  flex-shrink: 0;
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
+  height: 280px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid var(--dark-border);
+  transition: var(--transition);
 }
 
-.family-gallery-item img {
+.gallery-card:hover {
+  border-color: var(--royal-blue);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.25);
+}
+
+.gallery-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.family-gallery-item:hover img {
+.gallery-card:hover img {
   transform: scale(1.06);
 }
 
-.family-gallery-overlay {
+.gallery-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(transparent 30%, rgba(0, 0, 0, 0.85));
+  background: linear-gradient(transparent 40%, rgba(0, 0, 0, 0.9));
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -118,31 +133,29 @@
   transition: background 0.4s ease;
 }
 
-.family-gallery-item:hover .family-gallery-overlay {
-  background: linear-gradient(transparent 10%, rgba(37, 99, 235, 0.85));
+.gallery-card:hover .gallery-card-overlay {
+  background: linear-gradient(transparent 20%, rgba(37, 99, 235, 0.85));
 }
 
-.family-gallery-overlay i {
-  font-size: 1.4rem;
-  margin-bottom: 0.4rem;
-  color: var(--royal-blue-light);
-}
-
-.family-gallery-overlay h3 {
+.gallery-card-overlay h3 {
   font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 0.3rem;
 }
 
-.family-gallery-overlay p {
+.gallery-card-overlay p {
   font-size: 0.85rem;
   line-height: 1.4;
   opacity: 0.9;
 }
 
-.family-gallery-wide {
-  grid-column: span 2;
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 /* --- Video Embed --- */

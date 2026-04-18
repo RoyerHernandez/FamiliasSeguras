@@ -118,46 +118,76 @@
     <div class="container">
       <h2 class="section-title text-center">Protegemos lo que más importa</h2>
       <p class="section-subtitle text-center">Te ayudamos a que tu historia continúe.</p>
-      <div class="family-gallery">
-        <div class="family-gallery-item family-gallery-wide">
-          <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&q=80" alt="Familia feliz y protegida"/>
-          <div class="family-gallery-overlay">
-            <i class="fas fa-heart"></i>
-            <h3>Seguro de vida</h3>
-            <p>Tu familia siempre protegida, pase lo que pase</p>
-          </div>
+      <div class="gallery-carousel" id="gallery-carousel">
+        <div class="gallery-track" id="gallery-track">
+          <a href="#plan360-card" class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&q=80" alt="Plan 360"/>
+            <div class="gallery-card-overlay">
+              <h3>Plan 360</h3>
+              <p>Planificación financiera integral</p>
+            </div>
+          </a>
+          <a href="#vida" class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80" alt="Seguro de vida"/>
+            <div class="gallery-card-overlay">
+              <h3>Seguro de vida</h3>
+              <p>Protección para ti y tu familia</p>
+            </div>
+          </a>
+          <a href="#salud" class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&q=80" alt="Salud"/>
+            <div class="gallery-card-overlay">
+              <h3>Salud</h3>
+              <p>Atención médica de calidad</p>
+            </div>
+          </a>
+          <a href="#hogar" class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&q=80" alt="Hogar"/>
+            <div class="gallery-card-overlay">
+              <h3>Hogar</h3>
+              <p>Protección integral para tu vivienda</p>
+            </div>
+          </a>
+          <a href="#vehiculos" class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80" alt="Vehículos"/>
+            <div class="gallery-card-overlay">
+              <h3>Vehículos</h3>
+              <p>Respaldo en cada trayecto</p>
+            </div>
+          </a>
+          <a href="#viajes" class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&q=80" alt="Viajes"/>
+            <div class="gallery-card-overlay">
+              <h3>Viajes</h3>
+              <p>Cobertura en cualquier lugar del mundo</p>
+            </div>
+          </a>
+          <a href="#arrendamiento" class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&q=80" alt="Arrendamiento"/>
+            <div class="gallery-card-overlay">
+              <h3>Arrendamiento</h3>
+              <p>Tu inmueble siempre respaldado</p>
+            </div>
+          </a>
+          <a href="#credito-vehiculo" class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80" alt="Crédito vehículo"/>
+            <div class="gallery-card-overlay">
+              <h3>Crédito vehículo</h3>
+              <p>Financia con las mejores opciones</p>
+            </div>
+          </a>
+          <a href="#empresarial" class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Empresarial"/>
+            <div class="gallery-card-overlay">
+              <h3>Empresarial</h3>
+              <p>Protección para tu negocio</p>
+            </div>
+          </a>
         </div>
-        <div class="family-gallery-item">
-          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&q=80" alt="Hogar familiar acogedor"/>
-          <div class="family-gallery-overlay">
-            <i class="fas fa-home"></i>
-            <h3>Hogar</h3>
-            <p>Protege el lugar donde construyes tus recuerdos</p>
-          </div>
-        </div>
-        <div class="family-gallery-item">
-          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&q=80" alt="Familia viajando tranquila"/>
-          <div class="family-gallery-overlay">
-            <i class="fas fa-plane-departure"></i>
-            <h3>Viajes</h3>
-            <p>Viaja tranquilo, nosotros te respaldamos</p>
-          </div>
-        </div>
-        <div class="family-gallery-item">
-          <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&q=80" alt="Hogar seguro para tu familia"/>
-          <div class="family-gallery-overlay">
-            <i class="fas fa-key"></i>
-            <h3>Arrendamiento</h3>
-            <p>Tu inmueble siempre respaldado con la mejor póliza</p>
-          </div>
-        </div>
-        <div class="family-gallery-item">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&q=80" alt="Mujer saludable y tranquila"/>
-          <div class="family-gallery-overlay">
-            <i class="fas fa-heartbeat"></i>
-            <h3>Salud</h3>
-            <p>La mejor atención cuando más la necesitas</p>
-          </div>
+        <div class="gallery-controls">
+          <button class="carousel-btn" id="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+          <div class="carousel-dots" id="gallery-dots"></div>
+          <button class="carousel-btn" id="gallery-next"><i class="fas fa-chevron-right"></i></button>
         </div>
       </div>
       <!-- Video -->
