@@ -120,7 +120,11 @@
   }
 
   .gallery-card {
-    height: 220px;
+    height: 260px;
+  }
+
+  .gallery-card img {
+    object-position: center 15%;
   }
 
   .footer-grid {
