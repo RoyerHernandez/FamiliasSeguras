@@ -9,11 +9,15 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1001;
+  z-index: 900;
   background: var(--dark-bg);
   border-bottom: 1px solid var(--dark-border);
   height: 46px;
   overflow: hidden;
+}
+
+.ticker-wrapper .tradingview-widget-copyright {
+  display: none !important;
 }
 
 .ticker-wrapper .tradingview-widget-container {
