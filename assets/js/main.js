@@ -447,8 +447,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!valid) return;
 
-    alert(`Gracias ${nameInput.value.trim()}! Nos pondremos en contacto contigo en menos de 24 horas.`);
-    form.reset();
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'ENVIANDO...';
+    submitBtn.disabled = true;
+
+    const nombre = nameInput.value.trim();
+
+    // Enviar via iframe oculto para evitar CORS
+    var iframe = document.getElementById('gas-iframe');
+    if (!iframe) {
+      iframe = document.createElement('iframe');
+      iframe.id = 'gas-iframe';
+      iframe.name = 'gas-iframe';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+    }
+
+    var tempForm = document.createElement('form');
+    tempForm.method = 'POST';
+    tempForm.action = window.APPS_SCRIPT_URL || '';
+    tempForm.target = 'gas-iframe';
+    tempForm.style.display = 'none';
+
+    var fields = {
+      nombre: nombre,
+      email: emailInput.value.trim(),
+      telefono: phoneInput.value.trim(),
+      seguro: selectInput.value,
+      mensaje: (form.querySelector('textarea')?.value || '').trim()
+    };
+
+    for (var key in fields) {
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = fields[key];
+      tempForm.appendChild(input);
+    }
+
+    document.body.appendChild(tempForm);
+    tempForm.submit();
+    document.body.removeChild(tempForm);
+
+    setTimeout(() => {
+      alert(`Gracias ${nombre}! Nos pondremos en contacto contigo en menos de 24 horas.`);
+      form.reset();
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }, 2000);
   };
 
   window.handleNewsletterSubmit = function(e) {

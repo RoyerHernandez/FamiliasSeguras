@@ -845,6 +845,13 @@
   border: 1px solid var(--dark-border);
 }
 
+.google-form-embed {
+  width: 100%;
+  min-height: 700px;
+  border-radius: var(--radius-lg);
+  background: #fff;
+}
+
 .contact-form-box h3 {
   font-family: var(--font-heading);
   color: var(--white);

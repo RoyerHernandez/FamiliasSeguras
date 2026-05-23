@@ -257,7 +257,7 @@
           <img src="assets/img/logos/icon-salud.jpeg" alt="Seguros de salud privado" class="insurance-icon-img"/>
           <h3>Seguros de salud privado</h3>
           <p>Accede directamente a <strong>médicos especialistas</strong> y a <strong>exámenes diagnósticos</strong> (laboratorio, imagenología y radiología) <strong>sin autorizaciones previas</strong>. Cobertura de alta calidad en <strong>prótesis, trasplantes y tratamientos ambulatorios</strong>, incluso para <strong>enfermedades de alto costo</strong>. <strong>Planes básicos y completos</strong>, adaptados a tu necesidad.</p>
-          <a href="#contacto" class="btn-card">COTIZA AHORA</a>
+          <a href="https://docs.google.com/forms/d/14prsK7JCFudlGgOFZgr6Vi9blpKwWNjESU8Jk_8apoo/viewform" target="_blank" class="btn-card">COTIZA AHORA</a>
         </div>
         <div class="insurance-card" id="seg-vida">
           <img src="assets/img/logos/icon-vida.jpeg" alt="Seguro de vida" class="insurance-icon-img"/>
@@ -398,7 +398,7 @@
             <li><i class="fas fa-check-circle"></i> Acompañamiento continuo, más allá de la contratación de un producto</li>
           </ul>
           <p class="method-result">Tu plan integra <strong>protección, ahorro e inversión</strong>, alineado a tu realidad y proyectos de vida.</p>
-          <a href="#contacto" class="btn-primary">QUIERO MI PLAN DE PROTECCIÓN</a>
+          <a href="https://docs.google.com/forms/d/1RD49hI1DlL4PSKzAOr4pEfW9RLYPtKTEMtQgQhlGlWU/viewform" target="_blank" class="btn-primary">QUIERO MI PLAN DE PROTECCIÓN</a>
           <p class="method-note">Cupos limitados / Aplica ahora para la preselección</p>
         </div>
         <div class="method-image">
@@ -556,11 +556,11 @@
         <div class="contact-form-box">
           <h3>Solicita tu cotización gratis</h3>
           <form class="contact-form" onsubmit="handleFormSubmit(event)">
-            <div class="form-group"><label>Nombre completo *</label><input type="text" placeholder="Tu nombre" required/></div>
-            <div class="form-group"><label>Correo electrónico *</label><input type="email" placeholder="tu@correo.com" required/></div>
-            <div class="form-group"><label>WhatsApp / Teléfono *</label><input type="tel" placeholder="+57 318 207 0381" required/></div>
+            <div class="form-group"><label>Nombre completo *</label><input type="text" name="nombre" placeholder="Tu nombre" required/></div>
+            <div class="form-group"><label>Correo electrónico *</label><input type="email" name="email" placeholder="tu@correo.com" required/></div>
+            <div class="form-group"><label>WhatsApp / Teléfono *</label><input type="tel" name="telefono" placeholder="+57 318 207 0381" required/></div>
             <div class="form-group"><label>Tipo de seguro *</label>
-              <select required>
+              <select name="seguro" required>
                 <option value="">Selecciona...</option>
                 <optgroup label="Personas">
                   <option>Seguros de automóviles</option>
@@ -569,6 +569,7 @@
                   <option>Arrendamiento tradicional</option>
                   <option>Salud privado</option>
                   <option>Seguro de vida</option>
+                  <option>Seguro de viaje</option>
                 </optgroup>
                 <optgroup label="Empresas">
                   <option>Multi riesgo empresarial</option>
@@ -589,7 +590,7 @@
                 <option>No sé, necesito orientación</option>
               </select>
             </div>
-            <div class="form-group"><label>Cuéntanos más (opcional)</label><textarea rows="3" placeholder="¿Qué necesitas proteger?"></textarea></div>
+            <div class="form-group"><label>Cuéntanos más (opcional)</label><textarea name="mensaje" rows="3" placeholder="¿Qué necesitas proteger?"></textarea></div>
             <button type="submit" class="btn-primary btn-full">SOLICITAR COTIZACIÓN GRATIS</button>
             <p class="form-disclaimer">Política de privacidad. No compartimos tus datos.</p>
           </form>
@@ -617,6 +618,7 @@
   </footer>
   <a href="https://wa.me/573182070381?text=Hola,%20deseo%20conocer%20m%C3%A1s%20sobre%20seguros." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i><span class="whatsapp-tooltip">¿Necesitas ayuda?</span></a>
   <button class="scroll-top" id="scroll-top"><i class="fas fa-chevron-up"></i></button>
+  <script>window.APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxosrpnfl9BCFy12OOvJbixBZwLJaGynZ_iidjbYj2egWFqB_VewhjE7IVo-38RMdq0cw/exec';</script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
