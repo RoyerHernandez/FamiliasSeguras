@@ -471,6 +471,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tempForm.style.display = 'none';
 
     var fields = {
+      formulario: form.querySelector('input[name="formulario"]')?.value || 'cotizacion',
       nombre: nombre,
       email: emailInput.value.trim(),
       telefono: phoneInput.value.trim(),
