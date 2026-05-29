@@ -303,19 +303,23 @@
   padding: 3rem;
   max-width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
 
-.alianza-card h3 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--white);
-  margin-bottom: 1rem;
+.alianza-logo {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  margin: 0 auto 2rem;
+  display: block;
+  border-radius: 8px;
 }
 
 .alianza-card p {
   color: var(--text-medium);
   font-size: 1rem;
   line-height: 1.7;
+  text-align: left;
 }
 
 /* --- Method Section --- */

@@ -199,6 +199,50 @@
   font-size: 0.85rem;
 }
 
+/* --- Cotización Popup --- */
+
+.cotiza-popup-box {
+  max-width: 440px;
+  width: 90%;
+  padding: 2rem 2rem 1.5rem;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.cotiza-popup-box h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.cotiza-popup-form .form-group {
+  margin-bottom: 0.8rem;
+}
+
+.cotiza-popup-form .form-group label {
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.cotiza-popup-form input,
+.cotiza-popup-form select,
+.cotiza-popup-form textarea {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.cotiza-popup-form textarea {
+  resize: vertical;
+}
+
+.cotiza-popup-form .btn-full {
+  margin-top: 0.5rem;
+}
+
+.cotiza-popup-form .form-disclaimer {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
 /* --- Forms --- */
 
 .form-group {

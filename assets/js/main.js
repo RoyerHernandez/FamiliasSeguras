@@ -348,6 +348,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* --- Cotización Popup --- */
+  const cotizaOverlay = document.getElementById('cotiza-popup-overlay');
+  const cotizaClose = document.getElementById('cotiza-popup-close');
+  const cotizaSeguro = document.getElementById('cotiza-popup-seguro');
+
+  if (cotizaOverlay) {
+    document.querySelectorAll('.cotiza-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const seguro = btn.getAttribute('data-seguro');
+        if (seguro && cotizaSeguro) {
+          cotizaSeguro.value = seguro;
+        }
+        cotizaOverlay.classList.add('active');
+      });
+    });
+
+    cotizaClose?.addEventListener('click', () => {
+      cotizaOverlay.classList.remove('active');
+    });
+
+    cotizaOverlay.addEventListener('click', (e) => {
+      if (e.target === cotizaOverlay) {
+        cotizaOverlay.classList.remove('active');
+      }
+    });
+  }
+
   /* --- Form validation helpers --- */
 
   function validateEmail(email) {
@@ -496,6 +524,11 @@ document.addEventListener('DOMContentLoaded', () => {
       form.reset();
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
+      // Cerrar popup si el form está dentro de uno
+      const cotizaPopup = document.getElementById('cotiza-popup-overlay');
+      if (cotizaPopup && cotizaPopup.classList.contains('active')) {
+        cotizaPopup.classList.remove('active');
+      }
     }, 2000);
   };
 

@@ -32,6 +32,55 @@
       <small>Sin spam. Solo información de valor.</small>
     </div>
   </div>
+
+  <!-- ===== POPUP COTIZACIÓN ===== -->
+  <div id="cotiza-popup-overlay" class="popup-overlay cotiza-popup-overlay">
+    <div class="popup-box cotiza-popup-box">
+      <button class="popup-close" id="cotiza-popup-close">&times;</button>
+      <h2>Solicita tu cotización gratis</h2>
+      <form class="cotiza-popup-form" onsubmit="handleFormSubmit(event)">
+        <input type="hidden" name="formulario" value="cotizacion"/>
+        <div class="form-group"><label>Nombre completo *</label><input type="text" name="nombre" placeholder="Tu nombre" required/></div>
+        <div class="form-group"><label>Correo electrónico *</label><input type="email" name="email" placeholder="tu@correo.com" required/></div>
+        <div class="form-group"><label>WhatsApp / Teléfono *</label><input type="tel" name="telefono" placeholder="+57 318 207 0381" required/></div>
+        <div class="form-group"><label>Tipo de seguro *</label>
+          <select name="seguro" id="cotiza-popup-seguro" required>
+            <option value="">Selecciona...</option>
+            <optgroup label="Personas">
+              <option>Seguros de automóviles</option>
+              <option>Seguros de hogar</option>
+              <option>Arrendamiento digital</option>
+              <option>Arrendamiento tradicional</option>
+              <option>Salud privado</option>
+              <option>Seguro de vida</option>
+              <option>Seguro de viaje</option>
+            </optgroup>
+            <optgroup label="Empresas">
+              <option>Multi riesgo empresarial</option>
+              <option>Seguro agrícola</option>
+              <option>Responsabilidad civil</option>
+              <option>Seguros grupales</option>
+              <option>Seguro de vida socios</option>
+            </optgroup>
+            <optgroup label="Planeación">
+              <option>Seguro de pensión</option>
+              <option>Seguro educativo</option>
+              <option>Ahorro dólares</option>
+              <option>Ahorro en pesos</option>
+            </optgroup>
+            <option>Crédito de vehículo</option>
+            <option>Inversión / Alianza</option>
+            <option>Plan 360</option>
+            <option>No sé, necesito orientación</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Cuéntanos más (opcional)</label><textarea name="mensaje" rows="2" placeholder="¿Qué necesitas proteger?"></textarea></div>
+        <button type="submit" class="btn-primary btn-full">SOLICITAR COTIZACIÓN GRATIS</button>
+        <p class="form-disclaimer">Política de privacidad. No compartimos tus datos.</p>
+      </form>
+    </div>
+  </div>
+
   <header class="header" id="header">
     <div class="header-inner container">
       <a href="#inicio" class="logo-link">
@@ -263,7 +312,7 @@
           <img src="assets/img/logos/icon-vida.jpeg" alt="Seguro de vida" class="insurance-icon-img"/>
           <h3>Seguro de vida</h3>
           <p>Ofrecemos un <strong>Seguro de Vida</strong> que te protege a ti y a tu familia, con <strong>cuotas mensuales accesibles</strong>, mientras construyes tu futuro. <strong>Beneficios:</strong> Respaldo económico para tus beneficiarios en caso de fallecimiento. Indemnización adicional si el fallecimiento es por accidente. Protección por invalidez o enfermedad grave. Auxilio diario por hospitalización para cuidar tus finanzas.</p>
-          <a href="#contacto" class="btn-card">COTIZA AHORA</a>
+          <a href="#" class="btn-card cotiza-btn" data-seguro="Seguro de vida">COTIZA AHORA</a>
         </div>
         <div class="insurance-card" id="seg-viajes">
           <img src="assets/img/logos/icon-viajes-new.jpeg" alt="Seguro de viaje" class="insurance-icon-img"/>
@@ -285,31 +334,31 @@
           <img src="assets/img/logos/icon-arl.jpeg" alt="Multi riesgo empresarial" class="insurance-icon-img"/>
           <h3>Multi riesgo empresarial</h3>
           <p>Protege a <strong>medianas y grandes empresas</strong> frente a los riesgos que pueden afectar sus operaciones, cuidando su patrimonio y continuidad en el tiempo. Solución <strong>a la medida</strong> según el tipo de riesgo. <strong>Cobertura ajustada a la inflación</strong>. <strong>Tarifa dinámica</strong> según ubicación, actividad y valores asegurados. <strong>Acompañamiento técnico</strong> para mejorar y gestionar riesgos.</p>
-          <a href="#contacto" class="btn-card">COTIZA AHORA</a>
+          <a href="#" class="btn-card cotiza-btn" data-seguro="Multi riesgo empresarial">COTIZA AHORA</a>
         </div>
         <div class="insurance-card" id="seg-agricola">
           <img src="assets/img/logos/icon-agro.jpeg" alt="Seguro agrícola" class="insurance-icon-img"/>
           <h3>Seguro agrícola</h3>
           <p>Protege tus cultivos y <strong>recupera tu inversión</strong> si un fenómeno natural los afecta. El <strong>Seguro Agrícola de Cosecha</strong> te respalda para cubrir <strong>costos de producción</strong>, cumplir tus <strong>obligaciones financieras</strong> y <strong>continuar tu actividad agrícola</strong>, con apoyo del <strong>subsidio Finagro</strong>.</p>
-          <a href="#contacto" class="btn-card">COTIZA AHORA</a>
+          <a href="#" class="btn-card cotiza-btn" data-seguro="Seguro agrícola">COTIZA AHORA</a>
         </div>
         <div class="insurance-card" id="seg-responsabilidad">
           <img src="assets/img/logos/icon-comercio.jpeg" alt="Responsabilidad civil" class="insurance-icon-img"/>
           <h3>Responsabilidad civil</h3>
           <p>Es una <strong>protección para personas y empresas</strong> que desean amparar los <strong>daños que puedan causar a terceros</strong> durante el ejercicio de su actividad laboral o en el cumplimiento de un contrato. Cubre al asegurado por <strong>errores, omisiones o negligencias</strong> que generen una <strong>obligación de indemnizar</strong>, brindando respaldo y tranquilidad en su operación diaria.</p>
-          <a href="#contacto" class="btn-card">COTIZA AHORA</a>
+          <a href="#" class="btn-card cotiza-btn" data-seguro="Responsabilidad civil">COTIZA AHORA</a>
         </div>
         <div class="insurance-card" id="seg-grupales">
           <img src="assets/img/logos/icon-familia.jpeg" alt="Seguros grupales" class="insurance-icon-img"/>
           <h3>Seguros de vida grupo</h3>
           <p>O<strong>frecer a sus empleados como beneficio</strong>, fortaleciendo su bienestar, motivación y fidelización. Pueden incluir <strong>seguros de salud, vida, autos, exequias y otros</strong>, con condiciones preferenciales por ser contratados de forma grupal. Estos planes brindan <strong>protección integral al colaborador y su familia</strong>.</p>
-          <a href="#contacto" class="btn-card">COTIZA AHORA</a>
+          <a href="#" class="btn-card cotiza-btn" data-seguro="Seguros grupales">COTIZA AHORA</a>
         </div>
         <div class="insurance-card" id="seg-vida-socios">
           <img src="assets/img/logos/icon-vida-socios.jpeg" alt="Seguro de vida socios" class="insurance-icon-img"/>
           <h3>Seguro de vida socios</h3>
           <p><strong>Proteger la continuidad y estabilidad financiera de la empresa</strong> en caso de fallecimiento o invalidez de alguno de los socios. Se indemniza a la empresa según la <strong>participación del socio</strong>, permitiendo contar con liquidez para recomprar su parte y evitar afectaciones operativas o societarias. Brinda <strong>acompañamiento legal, financiero y de bienestar</strong>.</p>
-          <a href="#contacto" class="btn-card">COTIZA AHORA</a>
+          <a href="#" class="btn-card cotiza-btn" data-seguro="Seguro de vida socios">COTIZA AHORA</a>
         </div>
       </div>
     </div>
@@ -325,31 +374,31 @@
           <img src="assets/img/logos/icon-pensiones.jpeg" alt="Seguro de pensión" class="insurance-icon-img"/>
           <h3>Seguro de pensión</h3>
           <p>Es una solución que combina <strong>protección, ahorro e inversión</strong>, diseñada para ayudarte a construir capital a largo plazo y complementar tu pensión futura. Cobertura en caso de <strong>fallecimiento o incapacidad</strong>, mientras ahorras de forma programada, con <strong>beneficios tributarios</strong> y devolución del <strong>100 % de tu ahorro</strong>.</p>
-          <a href="#contacto" class="btn-card">COTIZA AHORA</a>
+          <a href="#" class="btn-card cotiza-btn" data-seguro="Seguro de pensión">COTIZA AHORA</a>
         </div>
         <div class="insurance-card" id="seg-educativo">
           <img src="assets/img/logos/icon-educacion.jpeg" alt="Seguro educativo" class="insurance-icon-img"/>
           <h3>Seguro educativo</h3>
           <p>La <strong>educación de tus hijos es el mejor legado</strong>. Con el <strong>Seguro Educativo</strong> aseguras desde hoy los recursos para su <strong>universidad</strong>, con un <strong>plan de pagos flexible</strong> según tus posibilidades. En caso de <strong>fallecimiento o invalidez</strong>, el seguro continúa cubriendo los <strong>costos educativos</strong>, incluso desde el colegio hasta el inicio de la universidad.</p>
-          <a href="#contacto" class="btn-card">COTIZA AHORA</a>
+          <a href="#" class="btn-card cotiza-btn" data-seguro="Seguro educativo">COTIZA AHORA</a>
         </div>
         <div class="insurance-card" id="seg-ahorro-dolares">
           <img src="assets/img/logos/icon-ahorro-dolares.jpeg" alt="Ahorro dólares" class="insurance-icon-img"/>
           <h3>Ahorro dólares</h3>
           <p>Es un seguro que te permite <strong>crear ingresos futuros programados</strong>, como complemento a tu pensión o para cumplir tus metas. Compras <strong>unidades que crecen en el tiempo</strong>, ligadas a la <strong>TRM</strong>. Incluye <strong>beneficios tributarios</strong>, una <strong>tasa mínima garantizada del 3 %</strong>, sin necesidad de exámenes médicos.</p>
-          <a href="#contacto" class="btn-card">COTIZA AHORA</a>
+          <a href="#" class="btn-card cotiza-btn" data-seguro="Ahorro dólares">COTIZA AHORA</a>
         </div>
         <div class="insurance-card" id="seg-ahorro-pesos">
           <img src="assets/img/logos/icon-ahorro.jpeg" alt="Ahorro en pesos" class="insurance-icon-img"/>
           <h3>Ahorro en pesos</h3>
           <p>Con este seguro desarrollas una <strong>planeación financiera</strong> y asegurar los <strong>ingresos futuros que complementarán tu pensión</strong>. Tú eliges <strong>cuánto tiempo pagar</strong> y la forma más cómoda: <strong>pago único o cuotas mensuales</strong>. <strong>Garantía financiera:</strong> tus ingresos no pierden valor en el tiempo. <strong>Beneficio tributario:</strong> optimiza impuestos según el artículo 126-1 del Estatuto Tributario.</p>
-          <a href="#contacto" class="btn-card">COTIZA AHORA</a>
+          <a href="#" class="btn-card cotiza-btn" data-seguro="Ahorro en pesos">COTIZA AHORA</a>
         </div>
         <div class="insurance-card" id="seg-vida-futuro">
           <img src="assets/img/logos/icon-vida.jpeg" alt="Seguro de vida" class="insurance-icon-img"/>
           <h3>Seguro de vida</h3>
           <p>Ofrecemos un <strong>Seguro de Vida</strong> que te protege a ti y a tu familia, con <strong>cuotas mensuales accesibles</strong>, mientras construyes tu futuro. <strong>Beneficios:</strong> Respaldo económico para tus beneficiarios. Indemnización adicional por accidente. Protección por invalidez o enfermedad grave. Auxilio diario por hospitalización.</p>
-          <a href="#contacto" class="btn-card">COTIZA AHORA</a>
+          <a href="#" class="btn-card cotiza-btn" data-seguro="Seguro de vida">COTIZA AHORA</a>
         </div>
       </div>
     </div>
@@ -360,7 +409,7 @@
     <div class="container">
       <h2 class="section-title text-center">Inversión</h2>
       <div class="alianza-card">
-        <h3>Alianza</h3>
+        <img src="assets/img/logos/alianza-logo.png" alt="Alianza - Roberto Ramírez &amp; Familias Seguras - Unidos para el futuro" class="alianza-logo"/>
         <p>"Sabemos que el éxito financiero requiere tanto de una protección robusta como de una inversión inteligente. Por esta razón, hemos fortalecido nuestro portafolio de servicios sumando la experiencia estratégica de <strong>RR Roberto Ramírez</strong>. Esta alianza nos permite entregarte una solución patrimonial 360, combinando la planeación detallada con una gestión de activos experta para asegurar tu tranquilidad a largo plazo."</p>
         <a href="#contacto" class="btn-primary" style="margin-top:1.5rem">SOLICITAR ASESORÍA</a>
       </div>
