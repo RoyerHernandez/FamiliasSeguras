@@ -358,8 +358,13 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         const seguro = btn.getAttribute('data-seguro');
+        const formulario = btn.getAttribute('data-formulario') || 'cotizacion';
         if (seguro && cotizaSeguro) {
           cotizaSeguro.value = seguro;
+        }
+        var formularioInput = cotizaOverlay.querySelector('input[name="formulario"]');
+        if (formularioInput) {
+          formularioInput.value = formulario;
         }
         cotizaOverlay.classList.add('active');
       });
@@ -367,11 +372,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cotizaClose?.addEventListener('click', () => {
       cotizaOverlay.classList.remove('active');
+      var formularioInput = cotizaOverlay.querySelector('input[name="formulario"]');
+      if (formularioInput) formularioInput.value = 'cotizacion';
     });
 
     cotizaOverlay.addEventListener('click', (e) => {
       if (e.target === cotizaOverlay) {
         cotizaOverlay.classList.remove('active');
+        var formularioInput = cotizaOverlay.querySelector('input[name="formulario"]');
+        if (formularioInput) formularioInput.value = 'cotizacion';
       }
     });
   }
