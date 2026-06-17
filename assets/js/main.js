@@ -385,6 +385,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* --- Salud Popup --- */
+  const saludOverlay = document.getElementById('salud-popup-overlay');
+  const saludClose = document.getElementById('salud-popup-close');
+
+  if (saludOverlay) {
+    document.querySelectorAll('.salud-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        saludOverlay.classList.add('active');
+      });
+    });
+
+    saludClose?.addEventListener('click', () => {
+      saludOverlay.classList.remove('active');
+    });
+
+    saludOverlay.addEventListener('click', (e) => {
+      if (e.target === saludOverlay) {
+        saludOverlay.classList.remove('active');
+      }
+    });
+  }
+
+  /* --- Plan 360 Popup --- */
+  const plan360Overlay = document.getElementById('plan360-popup-overlay');
+  const plan360Close = document.getElementById('plan360-popup-close');
+
+  if (plan360Overlay) {
+    document.querySelectorAll('.plan360-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        plan360Overlay.classList.add('active');
+      });
+    });
+
+    plan360Close?.addEventListener('click', () => {
+      plan360Overlay.classList.remove('active');
+    });
+
+    plan360Overlay.addEventListener('click', (e) => {
+      if (e.target === plan360Overlay) {
+        plan360Overlay.classList.remove('active');
+      }
+    });
+  }
+
   /* --- Form validation helpers --- */
 
   function validateEmail(email) {
@@ -537,6 +583,179 @@ document.addEventListener('DOMContentLoaded', () => {
       const cotizaPopup = document.getElementById('cotiza-popup-overlay');
       if (cotizaPopup && cotizaPopup.classList.contains('active')) {
         cotizaPopup.classList.remove('active');
+      }
+    }, 2000);
+  };
+
+  window.handleSaludSubmit = function(e) {
+    e.preventDefault();
+    const form = e.target;
+    clearAllErrors(form);
+
+    const nameInput = form.querySelector('input[name="nombre"]');
+    const emailInput = form.querySelector('input[name="email"]');
+    const phoneInput = form.querySelector('input[name="telefono"]');
+    const epsSelect = form.querySelector('select[name="eps"]');
+    let valid = true;
+
+    if (!nameInput.value.trim()) {
+      showFieldError(nameInput, 'Ingresa tu nombre completo');
+      valid = false;
+    }
+    if (!validateEmail(emailInput.value)) {
+      showFieldError(emailInput, 'Ingresa un correo valido');
+      valid = false;
+    }
+    if (!validatePhone(phoneInput.value)) {
+      showFieldError(phoneInput, 'Ingresa un numero de telefono valido');
+      valid = false;
+    }
+    if (!epsSelect.value) {
+      showFieldError(epsSelect, 'Selecciona una opcion');
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'ENVIANDO...';
+    submitBtn.disabled = true;
+
+    const nombre = nameInput.value.trim();
+
+    var iframe = document.getElementById('gas-iframe');
+    if (!iframe) {
+      iframe = document.createElement('iframe');
+      iframe.id = 'gas-iframe';
+      iframe.name = 'gas-iframe';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+    }
+
+    var tempForm = document.createElement('form');
+    tempForm.method = 'POST';
+    tempForm.action = window.APPS_SCRIPT_URL || '';
+    tempForm.target = 'gas-iframe';
+    tempForm.style.display = 'none';
+
+    var fields = {
+      formulario: 'salud',
+      nombre: nombre,
+      email: emailInput.value.trim(),
+      telefono: phoneInput.value.trim(),
+      eps: epsSelect.value,
+      plan_salud_adicional: (form.querySelector('select[name="plan_salud_adicional"]')?.value || ''),
+      viaja_extranjero: (form.querySelector('select[name="viaja_extranjero"]')?.value || ''),
+      importante_salud: (form.querySelector('textarea[name="importante_salud"]')?.value || '').trim(),
+      enfermedad_curso: (form.querySelector('textarea[name="enfermedad_curso"]')?.value || '').trim()
+    };
+
+    for (var key in fields) {
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = fields[key];
+      tempForm.appendChild(input);
+    }
+
+    document.body.appendChild(tempForm);
+    tempForm.submit();
+    document.body.removeChild(tempForm);
+
+    setTimeout(() => {
+      alert(`Gracias ${nombre}! Nos pondremos en contacto contigo en menos de 24 horas.`);
+      form.reset();
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+      const saludPopup = document.getElementById('salud-popup-overlay');
+      if (saludPopup && saludPopup.classList.contains('active')) {
+        saludPopup.classList.remove('active');
+      }
+    }, 2000);
+  };
+
+  window.handlePlan360Submit = function(e) {
+    e.preventDefault();
+    const form = e.target;
+    clearAllErrors(form);
+
+    const nameInput = form.querySelector('input[name="nombre"]');
+    const emailInput = form.querySelector('input[name="email"]');
+    const phoneInput = form.querySelector('input[name="telefono"]');
+    const plan360Select = form.querySelector('select[name="plan360_tipo"]');
+    let valid = true;
+
+    if (!nameInput.value.trim()) {
+      showFieldError(nameInput, 'Ingresa tu nombre completo');
+      valid = false;
+    }
+    if (!validateEmail(emailInput.value)) {
+      showFieldError(emailInput, 'Ingresa un correo valido');
+      valid = false;
+    }
+    if (!validatePhone(phoneInput.value)) {
+      showFieldError(phoneInput, 'Ingresa un numero de telefono valido');
+      valid = false;
+    }
+    if (!plan360Select.value) {
+      showFieldError(plan360Select, 'Selecciona una opcion');
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'ENVIANDO...';
+    submitBtn.disabled = true;
+
+    const nombre = nameInput.value.trim();
+
+    var iframe = document.getElementById('gas-iframe');
+    if (!iframe) {
+      iframe = document.createElement('iframe');
+      iframe.id = 'gas-iframe';
+      iframe.name = 'gas-iframe';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+    }
+
+    var tempForm = document.createElement('form');
+    tempForm.method = 'POST';
+    tempForm.action = window.APPS_SCRIPT_URL || '';
+    tempForm.target = 'gas-iframe';
+    tempForm.style.display = 'none';
+
+    var fields = {
+      formulario: 'plan360',
+      nombre: nombre,
+      email: emailInput.value.trim(),
+      telefono: phoneInput.value.trim(),
+      plan360_tipo: plan360Select.value,
+      como_ayudar: (form.querySelector('textarea[name="como_ayudar"]')?.value || '').trim()
+    };
+
+    for (var key in fields) {
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = fields[key];
+      tempForm.appendChild(input);
+    }
+
+    document.body.appendChild(tempForm);
+    tempForm.submit();
+    document.body.removeChild(tempForm);
+
+    setTimeout(() => {
+      alert(`Gracias ${nombre}! Nos pondremos en contacto contigo en menos de 24 horas para tu Plan 360.`);
+      form.reset();
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+      const plan360Popup = document.getElementById('plan360-popup-overlay');
+      if (plan360Popup && plan360Popup.classList.contains('active')) {
+        plan360Popup.classList.remove('active');
       }
     }, 2000);
   };

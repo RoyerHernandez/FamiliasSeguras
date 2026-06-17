@@ -81,6 +81,70 @@
     </div>
   </div>
 
+  <!-- ===== POPUP SALUD ===== -->
+  <div id="salud-popup-overlay" class="popup-overlay cotiza-popup-overlay">
+    <div class="popup-box cotiza-popup-box">
+      <button class="popup-close" id="salud-popup-close">&times;</button>
+      <h2>Cotización Salud Privado</h2>
+      <form class="cotiza-popup-form" onsubmit="handleSaludSubmit(event)">
+        <input type="hidden" name="formulario" value="salud"/>
+        <div class="form-group"><label>Nombre completo *</label><input type="text" name="nombre" placeholder="Tu nombre" required/></div>
+        <div class="form-group"><label>Correo electrónico *</label><input type="email" name="email" placeholder="tu@correo.com" required/></div>
+        <div class="form-group"><label>Celular *</label><input type="tel" name="telefono" placeholder="+57 318 207 0381" required/></div>
+        <div class="form-group"><label>¿Tienes EPS como cotizante o beneficiario? *</label>
+          <select name="eps" required>
+            <option value="">Selecciona...</option>
+            <option>Cotizante</option>
+            <option>Beneficiario</option>
+          </select>
+        </div>
+        <div class="form-group"><label>¿Manejas algún plan de Salud además de la EPS?</label>
+          <select name="plan_salud_adicional">
+            <option value="">Selecciona...</option>
+            <option>Sí</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="form-group"><label>¿Viajas continuamente al extranjero?</label>
+          <select name="viaja_extranjero">
+            <option value="">Selecciona...</option>
+            <option>Sí</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="form-group"><label>¿Qué es lo más importante para ti al pensar en un plan adicional para la salud?</label><textarea name="importante_salud" rows="2" placeholder="Cuéntanos..."></textarea></div>
+        <div class="form-group"><label>¿Tú o tu familia tienen alguna enfermedad o tratamiento en curso pendiente?</label><textarea name="enfermedad_curso" rows="2" placeholder="Cuéntanos..."></textarea></div>
+        <button type="submit" class="btn-primary btn-full">SOLICITAR COTIZACIÓN SALUD</button>
+        <p class="form-disclaimer">Política de privacidad. No compartimos tus datos.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== POPUP PLAN 360 ===== -->
+  <div id="plan360-popup-overlay" class="popup-overlay cotiza-popup-overlay">
+    <div class="popup-box cotiza-popup-box">
+      <button class="popup-close" id="plan360-popup-close">&times;</button>
+      <h2>Quiero mi Plan 360</h2>
+      <form class="cotiza-popup-form" onsubmit="handlePlan360Submit(event)">
+        <input type="hidden" name="formulario" value="plan360"/>
+        <div class="form-group"><label>Nombre completo *</label><input type="text" name="nombre" placeholder="Tu nombre" required/></div>
+        <div class="form-group"><label>Correo electrónico *</label><input type="email" name="email" placeholder="tu@correo.com" required/></div>
+        <div class="form-group"><label>WhatsApp / Teléfono *</label><input type="tel" name="telefono" placeholder="+57 318 207 0381" required/></div>
+        <div class="form-group"><label>Quiero mi plan 360 *</label>
+          <select name="plan360_tipo" required>
+            <option value="">Selecciona...</option>
+            <option>Personal</option>
+            <option>Familiar</option>
+            <option>Empresarial</option>
+          </select>
+        </div>
+        <div class="form-group"><label>¿Cómo podemos ayudarte?</label><textarea name="como_ayudar" rows="2" placeholder="Cuéntanos tu situación..."></textarea></div>
+        <button type="submit" class="btn-primary btn-full">QUIERO MI PLAN 360</button>
+        <p class="form-disclaimer">Política de privacidad. No compartimos tus datos.</p>
+      </form>
+    </div>
+  </div>
+
   <header class="header" id="header">
     <div class="header-inner container">
       <a href="#inicio" class="logo-link">
@@ -306,7 +370,7 @@
           <img src="assets/img/logos/icon-salud.jpeg" alt="Seguros de salud privado" class="insurance-icon-img"/>
           <h3>Seguros de salud privado</h3>
           <p>Accede directamente a <strong>médicos especialistas</strong> y a <strong>exámenes diagnósticos</strong> (laboratorio, imagenología y radiología) <strong>sin autorizaciones previas</strong>. Cobertura de alta calidad en <strong>prótesis, trasplantes y tratamientos ambulatorios</strong>, incluso para <strong>enfermedades de alto costo</strong>. <strong>Planes básicos y completos</strong>, adaptados a tu necesidad.</p>
-          <a href="#" class="btn-card cotiza-btn" data-seguro="Salud privado" data-formulario="salud">COTIZA AHORA</a>
+          <a href="#" class="btn-card salud-btn">COTIZA AHORA</a>
         </div>
         <div class="insurance-card" id="seg-vida">
           <img src="assets/img/logos/icon-vida.jpeg" alt="Seguro de vida" class="insurance-icon-img"/>
@@ -447,7 +511,7 @@
             <li><i class="fas fa-check-circle"></i> Acompañamiento continuo, más allá de la contratación de un producto</li>
           </ul>
           <p class="method-result">Tu plan integra <strong>protección, ahorro e inversión</strong>, alineado a tu realidad y proyectos de vida.</p>
-          <a href="#" class="btn-primary cotiza-btn" data-seguro="Plan 360" data-formulario="plan360">QUIERO MI PLAN DE PROTECCIÓN</a>
+          <a href="#" class="btn-primary plan360-btn">QUIERO MI PLAN DE PROTECCIÓN</a>
           <p class="method-note">Cupos limitados / Aplica ahora para la preselección</p>
         </div>
         <div class="method-image">
@@ -668,7 +732,7 @@
   </footer>
   <a href="https://wa.me/573182070381?text=Hola,%20deseo%20conocer%20m%C3%A1s%20sobre%20seguros." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i><span class="whatsapp-tooltip">¿Necesitas ayuda?</span></a>
   <button class="scroll-top" id="scroll-top"><i class="fas fa-chevron-up"></i></button>
-  <script>window.APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyR9pGejErcIXivTli3p-zMgakmxAVH0ybXbIvb4I9lgIAevG45FXyeZqCb9FIMzLJR/exec';</script>
+  <script>window.APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby7XlJoYxzJ9mmu06gL38rn21oyOk1Cuc82eNopTq6dDAK3CFo4zEp4IJqpoNxw_hvF/exec';</script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
